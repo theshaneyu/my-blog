@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>django review part2 | theshaneyu | Learn Free</title>
+
+  
+  <meta name="author" content="Shane Yu">
+  
+
+  
+  <meta name="description" content="上一篇我們在modles.py當中建立兩個資料表，Album和Song，其中Song當中的album欄位為Album表的foreign key
+進入python db shell的指令：
+
+python manage.py shell
+
+這邊進行以下操作
+1234567891011121314151">
+  
+
+  
+  
+  <meta name="keywords" content="django,python">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="django review part2"/>
+
+  <meta property="og:site_name" content="theshaneyu"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="theshaneyu" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">theshaneyu</a>
+    </h1>
+    <p class="site-description">Learn Free</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>django review part2</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2016/12/10/django review part2/" rel="bookmark">
+        <time class="entry-date published" datetime="2016-12-10T08:42:01.000Z">
+          2016-12-10
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>上一篇我們在<code>modles.py</code>當中建立兩個資料表，<strong>Album</strong>和<strong>Song</strong>，其中Song當中的album欄位為Album表的<strong>foreign key</strong></p>
+<p>進入python db shell的指令：</p>
+<blockquote>
+<p>python manage.py shell</p>
+</blockquote>
+<p>這邊進行以下操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; from music.models import Album, Song</div><div class="line"></div><div class="line">&gt;&gt;&gt; Album.objects.all()</div><div class="line">&lt;QuerySet []&gt;</div><div class="line"></div><div class="line">&gt;&gt;&gt; a = Album(artist=&quot;Taylor Swift&quot;, album_title=&quot;Red&quot;, genre=&quot;Country&quot;, album_logo=&quot;https://i.imgur.com/ZDYdGvz.png&quot;)</div><div class="line"></div><div class="line">&gt;&gt;&gt; a.save()</div><div class="line"></div><div class="line">&gt;&gt;&gt; a.artist</div><div class="line">&apos;Taylor Swift&apos;</div><div class="line"></div><div class="line">&gt;&gt;&gt; a.album_title</div><div class="line">&apos;Red&apos;</div><div class="line"></div><div class="line">&gt;&gt;&gt; a.id</div><div class="line">1</div><div class="line"></div><div class="line">&gt;&gt;&gt; b = Album()</div><div class="line"></div><div class="line">&gt;&gt;&gt; b.artist = &quot;Myth&quot;</div><div class="line"></div><div class="line">&gt;&gt;&gt; b.album_title = &quot;High School&quot;</div><div class="line"></div><div class="line">&gt;&gt;&gt; b.genre = &quot;Punk&quot;</div><div class="line"></div><div class="line">&gt;&gt;&gt; b.album_logo = &quot;https://imgur.com/iUaeVXx&quot;</div><div class="line"></div><div class="line">&gt;&gt;&gt; b.save()</div></pre></td></tr></table></figure>
+<ul>
+<li>在db shell當中，當我們輸入：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; from music.models import Album, Song</div><div class="line">&gt;&gt;&gt; Album.objects.all()</div><div class="line">&lt;QuerySet [&lt;Album: Album object&gt;]&gt;</div></pre></td></tr></table></figure>
+<p>我們得到的是<strong>Album: Album object</strong>，但我們希望的是在顯示出Album欄位時，能夠show一些Albunm的資訊<br>所以我們在<code>models.py</code>的Album class中加入一個函式<code>__self__</code>，此函式是告訴django這個表被呼叫的時候該顯示什麼樣的<strong>字串</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></div><div class="line">    <span class="keyword">return</span> self.album_title + <span class="string">' - '</span> +self.artist</div></pre></td></tr></table></figure>
+<p>顯示Albun時得到的就會變成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; Album.objects.all()</div><div class="line">&lt;QuerySet [&lt;Album: Red - Taylor Swift&gt;, &lt;Album: High School - Myth&gt;]&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/django/">django</a><a href="/tags/python/">python</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 Shane Yu
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
