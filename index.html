@@ -61,6 +61,137 @@
 
   
     
+    <h3 class="article-title"><a href="/2017/02/13/django from the beginning/"><span>django from the beginning (Web API 應用的部份)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/02/13/django from the beginning/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-02-13T14:22:11.000Z">
+          2017-02-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h4 id="安裝django"><a href="#安裝django" class="headerlink" title="安裝django"></a>安裝django</h4><ul>
+<li><p>創建專案資料夾(假設專案叫<code>website</code>)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir website</div><div class="line"><span class="built_in">cd</span> website</div></pre></td></tr></table></figure>
+</li>
+<li><p>創建虛擬環境並啟動</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">python3 -m venv venv</div><div class="line">.venv\Script\activate</div></pre></td></tr></table></figure>
+</li>
+<li><p>安裝django套件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install django</div></pre></td></tr></table></figure>
+</li>
+<li><p>測試是否安裝成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python <span class="comment"># 進入python shell</span></div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> django</div><div class="line">django.VERION</div><div class="line">(<span class="number">1</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="string">'final, 0'</span>) <span class="comment"># 顯示類似這樣即成功</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="開啟專案"><a href="#開啟專案" class="headerlink" title="開啟專案"></a>開啟專案</h3><ul>
+<li><p>開啟專案: (架設專案叫<code>website</code>)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">django-admin startprojst website</div></pre></td></tr></table></figure>
+</li>
+<li><p>跑 <strong>http server</strong> 起來確認是否正常</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py runserver</div></pre></td></tr></table></figure>
+</li>
+<li><p>創造一個app (會在父目錄層多一個app資料夾，假設創建 app 叫做 <code>music</code>)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py startapp music</div></pre></td></tr></table></figure>
+</li>
+<li><p>將<code>website</code>資料夾內的<code>urls.py</code>進行以下修改</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> include, url <span class="comment">#注意import</span></div><div class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</div><div class="line">urlpatterns = [</div><div class="line">    url(<span class="string">r'^admin/'</span>, admin.site.urls), <span class="comment"># 這行不變</span></div><div class="line">    url(<span class="string">r'^music/'</span>, include(<span class="string">'music.urls'</span>)), <span class="comment"># 加入這行，讓使用者輸入/mudic/之後接的東西會由music下的 urls.py 處理</span></div><div class="line">]</div></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>music</code>資料夾當中創建一個<code>urls.py</code>，並寫入以下內容(部分Code可從<code>website</code>資料夾內的<code>urls.py</code>複製)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</div><div class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views <span class="comment"># 讓這個 urls.py 可以呼叫 app 內 view.py的函式</span></div><div class="line">urlpatterns = [</div><div class="line">    url(<span class="string">r'^$'</span>, views.index, name=<span class="string">'index'</span>), <span class="comment"># Regular Expression 起始符號^，終止符號$</span></div><div class="line">]</div></pre></td></tr></table></figure>
+</li>
+<li><p>撰寫<code>music</code>的<code>view.py</code>邏輯跳過</p>
+</li>
+<li><p><code>website</code>資料夾內的<code>settings.py</code>，在 <code>INSTALLED_APPS</code> 欄位做以下修改</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'music'</span> <span class="comment"># 加入這行</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>同步程式碼到database</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py migrate <span class="comment"># migrate實際上的作用是，django會到settings.py裡面找INSTALLED_APP有哪些，並根據每個app需要哪些資料表來造給它們。（算是同步所有程式碼）</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/01/27/BeautifulSoup學習紀錄/"><span>BeautifulSoup學習紀錄</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/01/27/BeautifulSoup學習紀錄/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-01-26T16:08:53.000Z">
+          2017-01-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2016/12/11/django review part3/"><span>django review part3</span></a></h3>
     
   
