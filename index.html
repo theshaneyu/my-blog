@@ -118,6 +118,9 @@
 <li><p><code>website</code>資料夾內的<code>settings.py</code>，在 <code>INSTALLED_APPS</code> 欄位做以下修改</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'music'</span> <span class="comment"># 加入這行</span></div></pre></td></tr></table></figure>
 </li>
+<li><p><code>website</code>資料夾內的<code>settings.py</code>，在<code>ALLOWED_HOSTS</code>欄位做以下修改</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ALLOWED_HOSTS = [<span class="string">'*'</span>]</div></pre></td></tr></table></figure>
+</li>
 <li><p>同步程式碼到database</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py migrate <span class="comment"># migrate實際上的作用是，django會到settings.py裡面找INSTALLED_APP有哪些，並根據每個app需要哪些資料表來造給它們。（算是同步所有程式碼）</span></div></pre></td></tr></table></figure>
 </li>
