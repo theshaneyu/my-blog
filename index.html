@@ -107,26 +107,30 @@
 <li><p>創造一個app (會在父目錄層多一個app資料夾，假設創建 app 叫做 <code>music</code>)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py startapp music</div></pre></td></tr></table></figure>
 </li>
-<li><p>在<code>website</code>資料夾內的<code>settings.py</code>加入新增的app</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">INSTALLED_APPS = [</div><div class="line">    <span class="string">'cut'</span>, <span class="comment"># 加入這行</span></div><div class="line">    <span class="string">'django.contrib.admin'</span>,</div><div class="line">    <span class="string">'django.contrib.auth'</span>,</div><div class="line">    <span class="string">'django.contrib.contenttypes'</span>,</div><div class="line">    <span class="string">'django.contrib.sessions'</span>,</div><div class="line">    <span class="string">'django.contrib.messages'</span>,</div><div class="line">    <span class="string">'django.contrib.staticfiles'</span>,</div><div class="line">]</div></pre></td></tr></table></figure>
-</li>
 <li><p>將<code>website</code>資料夾內的<code>urls.py</code>進行以下修改</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> include, url <span class="comment">#注意import</span></div><div class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</div><div class="line">urlpatterns = [</div><div class="line">    url(<span class="string">r'^admin/'</span>, admin.site.urls), <span class="comment"># 這行不變</span></div><div class="line">    url(<span class="string">r'^music/'</span>, include(<span class="string">'music.urls'</span>)), <span class="comment"># 加入這行，讓使用者輸入/mudic/之後接的東西會由music下的 urls.py 處理</span></div><div class="line">]</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> include, url <span class="comment">#注意import</span></div><div class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</div><div class="line">urlpatterns = [</div><div class="line">    url(<span class="string">r'^admin/'</span>, admin.site.urls), <span class="comment"># 這行不變</span></div><div class="line">    url(<span class="string">r'^music/'</span>, include(<span class="string">'music.urls'</span>)), <span class="comment"># 加入這行，讓使用者輸入/music/之後接的東西會由music下的 urls.py 處理</span></div><div class="line">]</div></pre></td></tr></table></figure>
 </li>
 <li><p>在<code>music</code>資料夾當中創建一個<code>urls.py</code>，並寫入以下內容(部分Code可從<code>website</code>資料夾內的<code>urls.py</code>複製)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</div><div class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views <span class="comment"># 讓這個 urls.py 可以呼叫 app 內 view.py的函式</span></div><div class="line">urlpatterns = [</div><div class="line">    url(<span class="string">r'^$'</span>, views.index, name=<span class="string">'index'</span>), <span class="comment"># Regular Expression 起始符號^，終止符號$</span></div><div class="line">]</div></pre></td></tr></table></figure>
 </li>
-<li><p>撰寫<code>music</code>的<code>view.py</code>邏輯跳過</p>
-</li>
-<li><p><code>website</code>資料夾內的<code>settings.py</code>，在 <code>INSTALLED_APPS</code> 欄位做以下修改</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'music'</span> <span class="comment"># 加入這行</span></div></pre></td></tr></table></figure>
+<li><p>撰寫<code>music</code>的<code>view.py</code>邏輯(先以HttpRespoense做測試)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</div><div class="line"><span class="comment"># Create your views here.</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">cut</span><span class="params">(request)</span>:</span></div><div class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">"&lt;h1&gt;Hello World!&lt;/h1&gt;"</span>)</div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>(如果要讓外部連接的話)</strong><code>website</code>資料夾內的<code>settings.py</code>，在<code>ALLOWED_HOSTS</code>欄位做以下修改</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ALLOWED_HOSTS = [<span class="string">'*'</span>]</div></pre></td></tr></table></figure>
 </li>
-<li><p>同步程式碼到database</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py migrate <span class="comment"># migrate實際上的作用是，django會到settings.py裡面找INSTALLED_APP有哪些，並根據每個app需要哪些資料表來造給它們。（算是同步所有程式碼）</span></div></pre></td></tr></table></figure>
+<li><p><strong>以上為止已完成django最基本資料流，執行<code>runserver</code>應可看見HttpResponse的回應</strong></p>
 </li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>以下開始與資料庫連接部份的基本設定</strong></p>
+</li>
+<li><p>在<code>website</code>資料夾內的<code>settings.py</code>加入新增的app</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">INSTALLED_APPS = [</div><div class="line">    <span class="string">'music'</span> <span class="comment"># 加入這行</span></div><div class="line">    <span class="string">'django.contrib.admin'</span>,</div><div class="line">    <span class="string">'django.contrib.auth'</span>,</div><div class="line">    <span class="string">'django.contrib.contenttypes'</span>,</div><div class="line">    <span class="string">'django.contrib.sessions'</span>,</div><div class="line">    <span class="string">'django.contrib.messages'</span>,</div><div class="line">    <span class="string">'django.contrib.staticfiles'</span>,</div><div class="line">]</div></pre></td></tr></table></figure>
+</li>
+<li><p>同步程式碼到database</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py migrate <span class="comment"># migrate實際上的作用是，django會到settings.py裡面找INSTALLED_APP有哪些，並根據每個app需要哪些資料表來造給它們。（算是同步所有程式碼）</span></div></pre></td></tr></table></figure></li>
 </ul>
 
       
