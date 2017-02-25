@@ -3,21 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/2 | theshaneyu | Learn Free</title>
+  <title>BeautifulSoup常用selector | theshaneyu | Learn Free</title>
 
   
   <meta name="author" content="Shane Yu">
   
 
   
+  <meta name="description" content="get_text() : 取得標籤內容
+select()只支持CSS syntax的選擇
+bs4.BeautifulSoup類別的物件才能用find_all()
+soup.select(&amp;#39;li.list-story.first &amp;gt; div &amp;gt; a&amp;#39;) : 會回傳list，">
+  
 
+  
+  
+  <meta name="keywords" content="">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  
+  <meta property="og:title" content="BeautifulSoup常用selector"/>
 
   <meta property="og:site_name" content="theshaneyu"/>
 
@@ -56,43 +64,61 @@
 </header>
 
     <main class="site-main posts-loop">
-    
+    <article>
 
-<article>
-
-  <h2 class="article-title ">2017/2</h2>
-
-  <div class="archive">
-    
-      <div class="post archive">
-        <div class="archive-post">
-          <time datetime="2017-02-23T16:03:24.000Z">
-            <a href="/2017/02/24/BeautifulSoup常用selector/">2017-02-24</a>
-          </time>
-          
-            <h3 class="archive-title"><a href="/2017/02/24/BeautifulSoup常用selector/"><span>BeautifulSoup常用selector</span></a></h3>
-          
-        </div>
-      </div>
-    
-      <div class="post archive">
-        <div class="archive-post">
-          <time datetime="2017-02-13T14:22:11.000Z">
-            <a href="/2017/02/13/django from the beginning/">2017-02-13</a>
-          </time>
-          
-            <h3 class="archive-title"><a href="/2017/02/13/django from the beginning/"><span>django from the beginning (Web API 應用的部份)</span></a></h3>
-          
-        </div>
-      </div>
-    
-    <nav class="pagination">
   
+    
+    <h3 class="article-title"><span>BeautifulSoup常用selector</span></h3>
+    
   
-</nav>
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/02/24/BeautifulSoup常用selector/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-02-23T16:03:24.000Z">
+          2017-02-24
+        </time>
+      </a>
+    </span>
   </div>
 
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ul>
+<li><code>get_text()</code> : 取得標籤內容</li>
+<li>select()只支持CSS syntax的選擇</li>
+<li>bs4.BeautifulSoup類別的物件才能用find_all()</li>
+<li><code>soup.select(&#39;li.list-story.first &gt; div &gt; a&#39;)</code> : 會回傳<strong>list</strong>，每個element是<code>bs4.element.Tag</code>類別</li>
+<li>如果有已經得到<code>bs4.element.Tag</code>，則取得<code>&lt;a&gt;</code>內連結的方法為：<code>attrs[&quot;href&quot;]</code></li>
+<li></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
 </article>
+
+  
+
+
+
     </main>
 
     <footer class="site-footer">
