@@ -93,7 +93,7 @@ soup.select(&amp;#39;li.list-story.first &amp;gt; div &amp;gt; a&amp;#39;) : 會
 <li>select()只支持CSS syntax的選擇</li>
 <li>bs4.BeautifulSoup類別的物件才能用find_all()</li>
 <li><code>soup.select(&#39;li.list-story.first &gt; div &gt; a&#39;)</code> : 會回傳<strong>list</strong>，每個element是<code>bs4.element.Tag</code>類別</li>
-<li>如果有已經得到<code>bs4.element.Tag</code>，則取得<code>&lt;a&gt;</code>內連結的方法為：<code>attrs[&quot;href&quot;]</code></li>
+<li>如果有已經得到<code>bs4.element.Tag</code>，則取得<code>&lt;a&gt;</code>內連結的方法為：<code>Tag[&#39;href&#39;&quot;&#39;]</code></li>
 <li></li>
 </ul>
 
