@@ -124,7 +124,7 @@
 
   
     
-    <h3 class="article-title"><a href="/2017/02/24/BeautifulSoup常用selector/"><span>BeautifulSoup常用selector</span></a></h3>
+    <h3 class="article-title"><a href="/2017/02/24/BeautifulSoup常用selector/"><span>BeautifulSoup常用語法</span></a></h3>
     
   
 
@@ -145,12 +145,15 @@
     <div class="entry">
       
         <ul>
-<li><code>get_text()</code> : 取得標籤內容</li>
-<li>select()只支持CSS syntax的選擇</li>
-<li>bs4.BeautifulSoup類別的物件才能用find_all()</li>
-<li><code>soup.select(&#39;li.list-story.first &gt; div &gt; a&#39;)</code> : 會回傳<strong>list</strong>，每個element是<code>bs4.element.Tag</code>類別</li>
-<li>如果有已經得到<code>bs4.element.Tag</code>，則取得<code>&lt;a&gt;</code>內連結的方法為：<code>Tag[&#39;href&#39;&quot;&#39;]</code></li>
-<li></li>
+<li><p><strong>取得標籤內容</strong><br><code>get_text()</code></p>
+</li>
+<li><p><code>select()</code>只支持<strong>CSS syntax</strong>的選擇</p>
+</li>
+<li><p><code>soup.select()</code> : 會回傳<strong>list</strong>，每個element屬於<strong>bs4.element.Tag</strong>類別</p>
+</li>
+</ul>
+<ul>
+<li>如果有已經得到<code>bs4.element.Tag</code>，則取得<code>&lt;a&gt;</code>內連結的方法為：<strong>Tag[‘href’]</strong></li>
 </ul>
 
       
@@ -163,6 +166,13 @@
 
     
 
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/beautifulsoup-python/">beautifulsoup, python</a>
+    </span>
     
 
     </div>
