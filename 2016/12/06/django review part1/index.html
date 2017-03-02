@@ -19,7 +19,7 @@
 
   
   
-  <meta name="keywords" content="django,pytho`n">
+  <meta name="keywords" content="python,django">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -121,9 +121,11 @@
 </ul>
 <p>這行指令實際上做的事情是，django會去settings.py當中找 INSTALLED_APPS，去建立這些django內建app所需要資料庫表(admin, auth 等等)</p>
 <ul>
-<li><code>model.py</code>是描繪db藍圖的地方，一個 “ class “ 事實上就是一個表</li>
+<li><p><code>model.py</code>是描繪db藍圖的地方，一個 “ class “ 事實上就是一個表</p>
+</li>
+<li><h5 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h5></li>
 </ul>
-<h5 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Album</span><span class="params">(models.Model)</span>:</span></div><div class="line">    artist = models.CharField(max_length = <span class="number">250</span>) <span class="comment">#歌手的名字應該不會超過250個char</span></div><div class="line">    album_title = models.CharFiled(max_length = <span class="number">500</span>)</div><div class="line">    genre = models.CharField(max_length=<span class="number">100</span>)</div><div class="line">    album_logo = models.CharField(max_length=<span class="number">1000</span>)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Song</span><span class="params">(models.Model)</span>:</span></div><div class="line">    album = models.ForeignKey(Album, on_delete = models.CASCADE)</div><div class="line">    file_type = models.CharField(max_length=<span class="number">10</span>) <span class="comment"># 檔案類型應該不會超過10個字元(mp3等等)</span></div><div class="line">    song_title = models.CharField(max_length=<span class="number">250</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Album</span><span class="params">(models.Model)</span>:</span></div><div class="line">    artist = models.CharField(max_length = <span class="number">250</span>) <span class="comment">#歌手的名字應該不會超過250個char</span></div><div class="line">    album_title = models.CharFiled(max_length = <span class="number">500</span>)</div><div class="line">    genre = models.CharField(max_length=<span class="number">100</span>)</div><div class="line">    album_logo = models.CharField(max_length=<span class="number">1000</span>)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Song</span><span class="params">(models.Model)</span>:</span></div><div class="line">    album = models.ForeignKey(Album, on_delete = models.CASCADE)</div><div class="line">    file_type = models.CharField(max_length=<span class="number">10</span>) <span class="comment"># 檔案類型應該不會超過10個字元(mp3等等)</span></div><div class="line">    song_title = models.CharField(max_length=<span class="number">250</span>)</div></pre></td></tr></table></figure>
 <ul>
 <li><p>在這邊建立了四個項目的Album表，但實際上django還有幫我們建立一個<strong>column</strong>，給我們設定id(起始為1，一次增加1)，即為<strong>primary key</strong></p>
 </li>
@@ -138,11 +140,9 @@
 </li>
 <li><p>這行指令是告訴django去製造出那兩個表(也就是那兩個class)</p>
 </li>
-<li><strong>所以，要記得，凡是對db表有任何更動，都要做以下兩個指令：</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">makemigrations</div></pre></td></tr></table></figure>
+<li><p><strong>所以，要記得，凡是對db表有任何更動，都要做以下兩個指令：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">makemigrations</div><div class="line">migrate</div></pre></td></tr></table></figure>
 </li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">migrate</div></pre></td></tr></table></figure>
-<ul>
 <li><h5 id="進入django的db的-shell"><a href="#進入django的db的-shell" class="headerlink" title="進入django的db的 shell"></a><strong>進入django的db的 shell</strong></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py shell</div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -162,7 +162,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/django/">django</a><a href="/tags/pytho-n/">pytho`n</a>
+        <a href="/tags/python/">python</a><a href="/tags/django/">django</a>
     </span>
     
 
