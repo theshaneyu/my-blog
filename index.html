@@ -61,6 +61,69 @@
 
   
     
+    <h3 class="article-title"><a href="/2017/03/02/MongoDB初學/"><span>MongoDB初學</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/03/02/MongoDB初學/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-03-02T03:38:38.000Z">
+          2017-03-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h4 id="安裝pymongo"><a href="#安裝pymongo" class="headerlink" title="安裝pymongo"></a>安裝pymongo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install pymongo</div></pre></td></tr></table></figure>
+<h4 id="Client端"><a href="#Client端" class="headerlink" title="Client端"></a>Client端</h4><ul>
+<li><p>連線</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> pymongo <span class="keyword">import</span> MongoClient</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>uri = <span class="string">'mongodb://localhost:27017/'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>client = MongoClient(uri)</div></pre></td></tr></table></figure>
+</li>
+<li><p>取得<code>Database</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>db = client[<span class="string">'database'</span>]</div></pre></td></tr></table></figure>
+</li>
+<li><p>取得<code>Collection</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>collection = db[<span class="string">'dataset'</span>]</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/MongoDB-python/">MongoDB, python</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2017/02/24/BeautifulSoup常用selector/"><span>BeautifulSoup常用selector</span></a></h3>
     
   
