@@ -61,6 +61,64 @@
 
   
     
+    <h3 class="article-title"><a href="/2017/04/26/numpy筆記/"><span>numpy筆記</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/04/26/numpy筆記/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-04-25T16:03:12.000Z">
+          2017-04-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ul>
+<li><p><strong>numpy.add</strong> : 矩陣(or向量)加法<br>e.g.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>x1</div><div class="line">array([[ <span class="number">0.</span>,  <span class="number">1.</span>,  <span class="number">2.</span>],</div><div class="line">       [ <span class="number">3.</span>,  <span class="number">4.</span>,  <span class="number">5.</span>],</div><div class="line">       [ <span class="number">6.</span>,  <span class="number">7.</span>,  <span class="number">8.</span>]])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>x3</div><div class="line">array([[  <span class="number">9.</span>,  <span class="number">10.</span>,  <span class="number">11.</span>],</div><div class="line">       [ <span class="number">12.</span>,  <span class="number">13.</span>,  <span class="number">14.</span>],</div><div class="line">       [ <span class="number">15.</span>,  <span class="number">16.</span>,  <span class="number">17.</span>]])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.add(x1, x3)</div><div class="line">array([[  <span class="number">9.</span>,  <span class="number">11.</span>,  <span class="number">13.</span>],</div><div class="line">       [ <span class="number">15.</span>,  <span class="number">17.</span>,  <span class="number">19.</span>],</div><div class="line">       [ <span class="number">21.</span>,  <span class="number">23.</span>,  <span class="number">25.</span>]])</div></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/python/">python</a><a href="/tags/numpy/">numpy</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2017/04/25/Pandas筆記/"><span>Pandas筆記</span></a></h3>
     
   
@@ -82,7 +140,14 @@
     <div class="entry">
       
         <h2 id="dataFrame使用方法"><a href="#dataFrame使用方法" class="headerlink" title="dataFrame使用方法"></a>dataFrame使用方法</h2><ul>
-<li><strong>df.loc[row_indexer,column_indexer]</strong> : 選欄和列，可填入布林或index等等<br>e.g. <code>pdData.loc[pdData[0] == 1, 1:]</code></li>
+<li><p><strong>df.loc[row_indexer,column_indexer]</strong> : 選欄和列，可填入布林或index等等<br>e.g. <code>pdData.loc[pdData[0] == 1, 1:]</code></p>
+</li>
+<li><p><strong>df.shape</strong> : 可看矩陣是幾乘幾</p>
+</li>
+<li><p><strong>df.shape[0]</strong> : row數</p>
+</li>
+<li><p><strong>df.shape[0]</strong> : column數</p>
+</li>
 </ul>
 
       
@@ -229,7 +294,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/python/">python</a><a href="/tags/beautifulsoup/">beautifulsoup</a>
+        <a href="/tags/beautifulsoup/">beautifulsoup</a><a href="/tags/python/">python</a>
     </span>
     
 
