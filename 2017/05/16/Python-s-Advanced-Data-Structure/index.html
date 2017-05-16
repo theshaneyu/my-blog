@@ -88,26 +88,26 @@ heap[0] 是最小的物件，heap.">
   <div class="article-content">
     <div class="entry">
       
-        <h2 id="heapq-Heap-data-structure"><a href="#heapq-Heap-data-structure" class="headerlink" title="heapq (Heap data structure)"></a>heapq (Heap data structure)</h2><ul>
+        <h1 id="heapq-Heap-data-structure"><a href="#heapq-Heap-data-structure" class="headerlink" title="heapq (Heap data structure)"></a>heapq (Heap data structure)</h1><ul>
 <li>Python的heapq模組是實現<strong>min Heap</strong>，也就是父節點是<strong>最小值</strong></li>
 <li>建立一個 heap 可以使用<strong>list</strong>初始化為 []，或者使用函式<strong>heapify()</strong>將一個已經有元素的 list轉成一個 heap</li>
 <li>heap[0] 是最小的物件，heap.sort() 能保持 heap 的性質不變</li>
 </ul>
-<h3 id="基礎函式"><a href="#基礎函式" class="headerlink" title="基礎函式"></a>基礎函式</h3><h4 id="heapq-heappush-heap-item"><a href="#heapq-heappush-heap-item" class="headerlink" title="heapq.heappush(heap, item)"></a>heapq.heappush(heap, item)</h4><p>把 item 放進 heap，並保持 heap 性質不變。</p>
-<h4 id="heapq-heappop-heap"><a href="#heapq-heappop-heap" class="headerlink" title="heapq.heappop(heap)"></a>heapq.heappop(heap)</h4><p>從 heap 取出並回傳最小的元素，同時保持 heap 性質不變。如果 heap 是空的會產生 IndexError 錯誤。只存取最小元素但不取出可以使用 heap[0] 。</p>
-<h4 id="heapq-heappushpop-heap-item"><a href="#heapq-heappushpop-heap-item" class="headerlink" title="heapq.heappushpop(heap, item)"></a>heapq.heappushpop(heap, item)</h4><p>將 item 放入 heap ，接著從 heap 取出並回傳最小的元素。這個組合函式比呼叫 heappush() 之後呼叫 heappop() 更有效率。</p>
-<h4 id="heapq-heapify-x"><a href="#heapq-heapify-x" class="headerlink" title="heapq.heapify(x)"></a>heapq.heapify(x)</h4><p>在線性時間內將 list x 轉為 heap，且過程不會申請額外記憶體。</p>
-<h4 id="heapq-heapreplace-heap-item"><a href="#heapq-heapreplace-heap-item" class="headerlink" title="heapq.heapreplace(heap, item)"></a>heapq.heapreplace(heap, item)</h4><p>從 heap 取出並回傳最小的元素，接著將新的 item 放進heap。heap 的大小不會改變。如果 heap 是空的會產生 IndexError 錯誤。</p>
+<h2 id="基礎函式"><a href="#基礎函式" class="headerlink" title="基礎函式"></a>基礎函式</h2><h3 id="heapq-heappush-heap-item"><a href="#heapq-heappush-heap-item" class="headerlink" title="heapq.heappush(heap, item)"></a>heapq.heappush(heap, item)</h3><p>把 item 放進 heap，並保持 heap 性質不變。</p>
+<h3 id="heapq-heappop-heap"><a href="#heapq-heappop-heap" class="headerlink" title="heapq.heappop(heap)"></a>heapq.heappop(heap)</h3><p>從 heap 取出並回傳最小的元素，同時保持 heap 性質不變。如果 heap 是空的會產生 IndexError 錯誤。只存取最小元素但不取出可以使用 heap[0] 。</p>
+<h3 id="heapq-heappushpop-heap-item"><a href="#heapq-heappushpop-heap-item" class="headerlink" title="heapq.heappushpop(heap, item)"></a>heapq.heappushpop(heap, item)</h3><p>將 item 放入 heap ，接著從 heap 取出並回傳最小的元素。這個組合函式比呼叫 heappush() 之後呼叫 heappop() 更有效率。</p>
+<h3 id="heapq-heapify-x"><a href="#heapq-heapify-x" class="headerlink" title="heapq.heapify(x)"></a>heapq.heapify(x)</h3><p>在線性時間內將 list x 轉為 heap，且過程不會申請額外記憶體。</p>
+<h3 id="heapq-heapreplace-heap-item"><a href="#heapq-heapreplace-heap-item" class="headerlink" title="heapq.heapreplace(heap, item)"></a>heapq.heapreplace(heap, item)</h3><p>從 heap 取出並回傳最小的元素，接著將新的 item 放進heap。heap 的大小不會改變。如果 heap 是空的會產生 IndexError 錯誤。</p>
 <p>這個一次完成的操作會比呼叫 heappop() 之後呼叫 heappush() 更有效率，並在維護 heap 的大小不變時更為適當，取出/放入的組合函式一定會從 heap 回傳一個元素並用 item 取代他。</p>
 <p>函式的回傳值可能會大於被加入的 item 。如果這不是你期望發生的，可以考慮使用 heappushpop() 替代，他會回傳 heap 的最小值和 item 兩個當中比較小的那個，並將大的留在 heap 內。</p>
-<h3 id="利用heap實作的好用函式"><a href="#利用heap實作的好用函式" class="headerlink" title="利用heap實作的好用函式"></a>利用heap實作的好用函式</h3><h4 id="heapq-merge-iterables-key-None-reverse-False"><a href="#heapq-merge-iterables-key-None-reverse-False" class="headerlink" title="heapq.merge(*iterables, key=None, reverse=False)"></a>heapq.merge(*iterables, key=None, reverse=False)</h4><p>合併多個已排序的輸入並產生單一且已排序的輸出（舉例：合併來自多個 log 檔中有時間戳記的項目）。回傳一個 iterator 包含已經排序的值。</p>
+<h2 id="利用heap實作的好用函式"><a href="#利用heap實作的好用函式" class="headerlink" title="利用heap實作的好用函式"></a>利用heap實作的好用函式</h2><h3 id="heapq-merge-iterables-key-None-reverse-False"><a href="#heapq-merge-iterables-key-None-reverse-False" class="headerlink" title="heapq.merge(*iterables, key=None, reverse=False)"></a>heapq.merge(*iterables, key=None, reverse=False)</h3><p>合併多個已排序的輸入並產生單一且已排序的輸出（舉例：合併來自多個 log 檔中有時間戳記的項目）。回傳一個 iterator 包含已經排序的值。</p>
 <p>和 sorted(itertools.chain(*iterables)) 類似但回傳值是一個 iterable ，不會一次把所有資料都放進記憶體中，並且假設每一個輸入都已經（由小到大）排序過了。</p>
 <p>有兩個選用參數，指定時必須被當作關鍵字參數指定。</p>
 <p>key 參數指定了一個 key function 引數，用來從每一個輸入的元素中決定一個比較的依據。預設的值是 None （直接比較元素）。</p>
 <p>reverse 是一個布林值。如果設定為 True ，那輸入的元素被 merge 時每一個比較結果都是相反的。</p>
 <p>3.5 版更變: 加入選用參數 key 和 reverse 。</p>
-<h4 id="heapq-nlargest-n-iterable-key-None"><a href="#heapq-nlargest-n-iterable-key-None" class="headerlink" title="heapq.nlargest(n, iterable, key=None)"></a>heapq.nlargest(n, iterable, key=None)</h4><p>回傳一個包含資料 iterable 中前 n 大元素的 list 。如果有指定 key 參數，key 會是只有一個參數的函式，用來從每一個 iterable 的元素中決定一個比較的依據：key=str.lower 等價於 sorted(iterable, key=key, reverse=True)[:n]</p>
-<h4 id="heapq-nsmallest-n-iterable-key-None"><a href="#heapq-nsmallest-n-iterable-key-None" class="headerlink" title="heapq.nsmallest(n, iterable, key=None)"></a>heapq.nsmallest(n, iterable, key=None)</h4><p>回傳一個包含資料 iterable 中前 n 小元素的 list 。如果有指定 key 參數，key 會是只有一個參數的函式，用來從每一個 iterable 的元素中決定一個比較的依據：key=str.lower 等價於 sorted(iterable, key=key)[:n]</p>
+<h3 id="heapq-nlargest-n-iterable-key-None"><a href="#heapq-nlargest-n-iterable-key-None" class="headerlink" title="heapq.nlargest(n, iterable, key=None)"></a>heapq.nlargest(n, iterable, key=None)</h3><p>回傳一個包含資料 iterable 中前 n 大元素的 list 。如果有指定 key 參數，key 會是只有一個參數的函式，用來從每一個 iterable 的元素中決定一個比較的依據：key=str.lower 等價於 sorted(iterable, key=key, reverse=True)[:n]</p>
+<h3 id="heapq-nsmallest-n-iterable-key-None"><a href="#heapq-nsmallest-n-iterable-key-None" class="headerlink" title="heapq.nsmallest(n, iterable, key=None)"></a>heapq.nsmallest(n, iterable, key=None)</h3><p>回傳一個包含資料 iterable 中前 n 小元素的 list 。如果有指定 key 參數，key 會是只有一個參數的函式，用來從每一個 iterable 的元素中決定一個比較的依據：key=str.lower 等價於 sorted(iterable, key=key)[:n]</p>
 <p>後兩個函式在 n 值比較小時有最好的表現。對於較大的 n 值，只用 sorted() 函式會更有效率。同樣地，當 n==1 時，使用內建函式 min() 和 max() 會有更好的效率。如果需要重複使用這些函式，可以考慮將 iterable 轉成真正的 heap 。</p>
 
       
