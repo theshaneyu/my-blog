@@ -103,6 +103,9 @@ df.">
 </li>
 <li><p><strong>df.values</strong> : dataFrame的numpy表示式(會轉成巢狀)</p>
 </li>
+<li><p><strong>df.iterrows()</strong> : iterates over DataFrame <strong>rows</strong>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line">   c1   c2</div><div class="line">0  10  100</div><div class="line">1  11  110</div><div class="line">2  12  120</div><div class="line">"""</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> index, row <span class="keyword">in</span> df.iterrows():</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>    print(row[<span class="string">'c1'</span>], row[<span class="string">'c2'</span>])</div><div class="line">&gt;&gt;&gt;</div><div class="line"><span class="string">"""</span></div><div class="line">10 100</div><div class="line">11 110</div><div class="line">12 120</div><div class="line">"""</div></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
