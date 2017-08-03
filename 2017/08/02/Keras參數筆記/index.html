@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Keras參數筆記 | theshaneyu | Learn Free</title>
+
+  
+  <meta name="author" content="Shane Yu">
+  
+
+  
+  <meta name="description" content="kernel_initializer : 該層的權重初始化的方法
+
+可將函式的名字當作字串使用(函式的參數將會使用預設)123model.add(Dense(64,                kernel_initializer=&#39;random_uniform&#39;,                ">
+  
+
+  
+  
+  <meta name="keywords" content="keras,machine learning">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Keras參數筆記"/>
+
+  <meta property="og:site_name" content="theshaneyu"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="theshaneyu" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">theshaneyu</a>
+    </h1>
+    <p class="site-description">Learn Free</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Keras參數筆記</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/08/02/Keras參數筆記/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-08-02T08:27:58.000Z">
+          2017-08-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ul>
+<li><strong>kernel_initializer</strong> : 該層的權重初始化的方法</li>
+</ul>
+<h4 id="可將函式的名字當作字串使用-函式的參數將會使用預設"><a href="#可將函式的名字當作字串使用-函式的參數將會使用預設" class="headerlink" title="可將函式的名字當作字串使用(函式的參數將會使用預設)"></a>可將函式的名字當作字串使用(函式的參數將會使用預設)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">model.add(Dense(<span class="number">64</span>,</div><div class="line">                kernel_initializer=<span class="string">'random_uniform'</span>,</div><div class="line">                bias_initializer=<span class="string">'zeros'</span>))</div></pre></td></tr></table></figure>
+<h4 id="亦可使用keras所提供的函式"><a href="#亦可使用keras所提供的函式" class="headerlink" title="亦可使用keras所提供的函式"></a>亦可使用keras所提供的函式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> initializers</div><div class="line"></div><div class="line">model.add(Dense(<span class="number">64</span>, kernel_initializer=initializers.random_normal(stddev=<span class="number">0.01</span>)))</div><div class="line"></div><div class="line"><span class="comment"># also works; will use the default parameters.</span></div><div class="line">model.add(Dense(<span class="number">64</span>, kernel_initializer=<span class="string">'random_normal'</span>))</div></pre></td></tr></table></figure>
+<p>[函式列表] <a href="https://keras-cn.readthedocs.io/en/latest/other/initializations/" target="_blank" rel="external">https://keras-cn.readthedocs.io/en/latest/other/initializations/</a></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/keras/">keras</a><a href="/tags/machine-learning/">machine learning</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 Shane Yu
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

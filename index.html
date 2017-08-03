@@ -61,6 +61,64 @@
 
   
     
+    <h3 class="article-title"><a href="/2017/08/02/Keras參數筆記/"><span>Keras參數筆記</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/08/02/Keras參數筆記/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-08-02T08:27:58.000Z">
+          2017-08-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ul>
+<li><strong>kernel_initializer</strong> : 該層的權重初始化的方法</li>
+</ul>
+<h4 id="可將函式的名字當作字串使用-函式的參數將會使用預設"><a href="#可將函式的名字當作字串使用-函式的參數將會使用預設" class="headerlink" title="可將函式的名字當作字串使用(函式的參數將會使用預設)"></a>可將函式的名字當作字串使用(函式的參數將會使用預設)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">model.add(Dense(<span class="number">64</span>,</div><div class="line">                kernel_initializer=<span class="string">'random_uniform'</span>,</div><div class="line">                bias_initializer=<span class="string">'zeros'</span>))</div></pre></td></tr></table></figure>
+<h4 id="亦可使用keras所提供的函式"><a href="#亦可使用keras所提供的函式" class="headerlink" title="亦可使用keras所提供的函式"></a>亦可使用keras所提供的函式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> initializers</div><div class="line"></div><div class="line">model.add(Dense(<span class="number">64</span>, kernel_initializer=initializers.random_normal(stddev=<span class="number">0.01</span>)))</div><div class="line"></div><div class="line"><span class="comment"># also works; will use the default parameters.</span></div><div class="line">model.add(Dense(<span class="number">64</span>, kernel_initializer=<span class="string">'random_normal'</span>))</div></pre></td></tr></table></figure>
+<p>[函式列表] <a href="https://keras-cn.readthedocs.io/en/latest/other/initializations/" target="_blank" rel="external">https://keras-cn.readthedocs.io/en/latest/other/initializations/</a></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/keras/">keras</a><a href="/tags/machine-learning/">machine learning</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2017/06/17/pyspark筆記/"><span>pyspark DataFrame筆記</span></a></h3>
     
   
@@ -436,7 +494,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/python/">python</a><a href="/tags/beautifulsoup/">beautifulsoup</a>
+        <a href="/tags/beautifulsoup/">beautifulsoup</a><a href="/tags/python/">python</a>
     </span>
     
 
@@ -626,69 +684,6 @@
 <li>template觀念和之前一樣，當你在<code>views.py</code>當中有個函式，你就必須回傳東西。而在這邊，該函式被呼叫時回傳的東西就是那個template，也就是前端介面的樣子，使用的語法是:</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/python/">python</a><a href="/tags/django/">django</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2016/12/10/django review part2/"><span>django review part2</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2016/12/10/django review part2/" rel="bookmark">
-        <time class="entry-date published" datetime="2016-12-10T08:42:01.000Z">
-          2016-12-10
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>上一篇我們在<code>modles.py</code>當中建立兩個資料表，<strong>Album</strong>和<strong>Song</strong>，其中Song當中的album欄位為Album表的<strong>foreign key</strong></p>
-<p>進入python db shell的指令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py shell</div></pre></td></tr></table></figure>
-<p>這邊進行以下操作</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> music.models <span class="keyword">import</span> Album, Song</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>Album.objects.all()</div><div class="line">&lt;QuerySet []&gt;</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = Album(artist=<span class="string">"Taylor Swift"</span>, album_title=<span class="string">"Red"</span>, genre=<span class="string">"Country"</span>, album_logo=<span class="string">"https://i.imgur.com/ZDYdGvz.png"</span>)</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a.save()</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a.artist</div><div class="line"><span class="string">'Taylor Swift'</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a.album_title</div><div class="line"><span class="string">'Red'</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a.id</div><div class="line"><span class="number">1</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b = Album()</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b.artist = <span class="string">"Myth"</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b.album_title = <span class="string">"High School"</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b.genre = <span class="string">"Punk"</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b.album_logo = <span class="string">"https://imgur.com/iUaeVXx"</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b.save()</div></pre></td></tr></table></figure>
-<p>在db shell當中，當我們輸入：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> music.models <span class="keyword">import</span> Album, Song</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>Album.objects.all()</div><div class="line">&lt;QuerySet [&lt;Album: Album object&gt;]&gt;</div></pre></td></tr></table></figure>
-<p>我們得到的是<strong>Album: Album object</strong>，但我們希望的是在顯示出Album欄位時，能夠show一些Albunm的資訊<br>所以我們在<code>models.py</code>的Album class中加入一個函式<code>__self__</code>，此函式是告訴django這個表被呼叫的時候該顯示什麼樣的<strong>字串</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></div><div class="line">    <span class="keyword">return</span> self.album_title + <span class="string">' - '</span> +self.artist</div></pre></td></tr></table></figure>
-<p>顯示Albun時得到的就會變成：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; Album.objects.all()</div><div class="line">&lt;QuerySet [&lt;Album: Red - Taylor Swift&gt;, &lt;Album: High School - Myth&gt;]&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
