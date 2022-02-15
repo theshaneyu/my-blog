@@ -1,0 +1,4 @@
+baseURL = 'http://theshaneyu.github.io/'
+languageCode = 'en-us'
+title = 'My journey'
+theme = "PaperMod"
