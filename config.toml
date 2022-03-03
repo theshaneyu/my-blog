@@ -1,5 +1,5 @@
 baseURL = 'http://theshaneyu.github.io/'
-languageCode = 'en-us'
-title = 'My journey'
+languageCode = 'zh'
+title = '後端工程師的前端之路'
 theme = "PaperMod"
 publishDir = "docs"
