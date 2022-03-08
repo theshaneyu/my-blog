@@ -315,6 +315,52 @@ align-self property 用於設定單一 flexbox item 於垂直方向對齊的方�
 
 就如同上面提到的，我覺得初學 flexbox 時若常常搞不清楚某個 property 的行為，則往往是因為忽略了 property 的**預設值**這件事情
 
+# Shorthand
+
+另一個常見用於設定 **flexbox item** 的方式是使用 shorthand - `flex` property
+
+`flex` 為 `flex-grow`、`flex-shrink`、`flex-basis` 的縮寫
+
+例如
+
+```css
+.flexbox-item {
+  flex: 1 1 0px;
+}
+```
+
+等同於
+
+```css
+.flexbox-item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basic: 0px;
+}
+```
+
+然而和 `margin`、`padding` 等 properties 一樣，`flex` 可能不會有完整的三個數值
+
+當 `flex` 只有**兩個**數值時，兩個數值可能分別代表：
+
+1. `flex-grow` ＆ `flex-basis`
+2. `flex-grow` ＆ `flex-shrink`
+
+而當 `flex` 只有**一個**數值時，該數值可以是：
+
+1. `flex-grow`
+2. `flex-basis`
+3. `none`
+4. `inherit`
+
+`flex` 的定義如果沒有記清楚，很容易會有預期外的效果，這邊提供幾個常見的用法
+
+### `flex: 0 auto;`
+
+這等同於 `flex: initial`，也等同於所有三個數值的預設值：`flex: 0 1 auto;`
+
+這種寫法雖然沒有特別設定 `flex-shrink`，但其實已經預設把 `flex-shink` 設定為 `1`，因此該 flexbox item 會有它最初始預設的行為，也就是當 flexbox container 留有多餘的空間時，便可以根據 flexbox container 的設定來彈性地調整 flexbox items 的排列方式，同時在 flexbox container  被壓縮時，
+
 # Flexbox properties values
 
 文章的結尾附上一些常見的 flexbox properties 的所有可選值，與其預設值（粗體為預設值）
