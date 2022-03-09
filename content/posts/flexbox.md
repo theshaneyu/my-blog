@@ -4,15 +4,15 @@ date: 2022-02-15T18:33:47+08:00
 draft: false
 ---
 
-本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄
+本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄。
 
 # 基本觀念
 
-其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 **flexbox container properties** 和 **flexbox item properties** 兩種
+其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 **flexbox container properties** 和 **flexbox item properties** 兩種。
 
-所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements
+所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements。
 
-例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html
+例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html。
 
 ```html
 <div class="flexbox-container">
@@ -22,11 +22,11 @@ draft: false
 </div>
 ```
 
-而 flexbox 的 properties 也就是分成專門給 **flexbox container**（設定在 `flexbox-container` class）與專門給 **flexbox items** （設定在 `flexbox-item1`、`flexbox-item2` 與 `flexbox-item3` classes）兩種 properties
+而 flexbox 的 properties 也就是分成專門給 **flexbox container**（設定在 `flexbox-container` class）與專門給 **flexbox items** （設定在 `flexbox-item1`、`flexbox-item2` 與 `flexbox-item3` classes）兩種 properties。
 
-其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items **在一個方向上（水平或垂直）** 排列的方式
+其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items **在一個方向上（水平或垂直）** 排列的方式。
 
-顯然這邊特別提到一個方向上，表示會有能夠在兩個方向上（水平和垂直）設定排列方式的屬性，也就是 `grid` property
+顯然這邊特別提到一個方向上，表示會有能夠在兩個方向上（水平和垂直）設定排列方式的屬性，也就是 `grid` property。
 
 # 預設值
 
@@ -75,17 +75,17 @@ draft: false
 2. 三個 items **靠左**排列
 3. 三個不同高度的 items 變成**相同的高度**
 
-這邊便會帶到另外一個後來的我希望當初學習 flexbox 時更加關注的事情：**flexbox properties 的預設值**
+這邊便會帶到另外一個後來的我希望當初學習 flexbox 時更加關注的事情：**flexbox properties 的預設值**。
 
-會出現上述三個現象是因為當我們把 flexbox container 的 `display` 設定為 `flex` 時，該 flexbox container 會自動擁有一些 flexbox properties，且它們將被設定為各自的**預設值**
+會出現上述三個現象是因為當我們把 flexbox container 的 `display` 設定為 `flex` 時，該 flexbox container 會自動擁有一些 flexbox properties，且它們將被設定為各自的**預設值**：
 
 1. `flex-direction` 被設定為預設值 `row`，使得三個 items 呈**水平方向**排列
 2. `justify-content` 被設定為預設值 `flex-start`，使得三個 items **向左**靠攏
 3. `align-items` 被設定為預設值 `stretch`，使得 item1 和 item2 被拉伸為**和 item3 相同的高度**
 
-我也將在本篇的結尾附上一些我覺得比較重要的 properties 的預設值
+我也將在本篇的結尾附上一些我覺得比較重要的 properties 的預設值。
 
-接著再來複習一下，flexbox properties 分成用於設定 parent 的 flexbox container properties 和用於設定 children 的 flexbox item properties，接下來將會先介紹 flexbox container properties 再介紹 flexbox item properties
+接著再來複習一下，flexbox properties 分成用於設定 parent 的 flexbox container properties 和用於設定 children 的 flexbox item properties，接下來將會先介紹 flexbox container properties 再介紹 flexbox item properties。
 
 # flexbox container properties
 
@@ -102,7 +102,7 @@ CSS styling 當中最常做的事情莫過於將一個 element **水平置中**�
 
 ![justify-center](/flexbox/justify-center.png)
 
-將 justify-content 設定為 `center` 後，所有 children items 將會被擠到中間，且彼此之間不會預留空間（此處的空隙是因為 `flexbox-item` class 有設定 margin）
+將 justify-content 設定為 `center` 後，所有 children items 將會被擠到中間，且彼此之間不會預留空間（此處的空隙是因為 `flexbox-item` class 有設定 margin）。
 
 如果你希望在 items 之間盡可能地塞滿空間，可以將 justify-content 設定為 `space-between`
 
@@ -128,7 +128,9 @@ CSS styling 當中最常做的事情莫過於將一個 element **水平置中**�
 
 ## `align-items` property
 
-如剛才所提到的，一但將 flexbox container 設定為 `display:flex`，三個 items 的高度都將會變成一樣，是因為 `align-items` 的預設值為 `stretch`，而如果將 `align-items` 設定為 `flex-start`，則三個 items 的高度將會回到原本的值，並且朝上靠攏
+如剛才所提到的，一但將 flexbox container 設定為 `display:flex`，三個 items 的高度都將會變成一樣，是因為 `align-items` 的預設值為 `stretch`。
+
+而如果將 `align-items` 設定為 `flex-start`，則三個 items 的高度將會回到原本的值，並且朝上靠攏
 
 ```css
 .flexbox-container {
@@ -140,7 +142,7 @@ CSS styling 當中最常做的事情莫過於將一個 element **水平置中**�
 
 ![align-start](/flexbox/align-start.png)
 
-而另外一個在 css styling 中最常做的事情便是**垂直置中**，而這個可以透過將 align-items 設定為 `center` 來達到，在 flexbox 推出之前，要將 element 做垂直置中幾乎是不可能的事
+而另外一個在 css styling 中最常做的事情便是**垂直置中**，而這個可以透過將 align-items 設定為 `center` 來達到
 
 ```css
 .flexbox-container {
@@ -152,9 +154,11 @@ CSS styling 當中最常做的事情莫過於將一個 element **水平置中**�
 
 ![align-center](/flexbox/align-center.png)
 
+在 flexbox 之前，要將 element 做垂直置中幾乎是不可能的事。
+
 ## `align-content` property
 
-另一個不是很常用的 property 是 `align-content` property，align-content property 只會在**多行**的 flexbox items 中使用
+另一個不是很常用的 property 是 `align-content` property，align-content property 只會在**多行**的 flexbox items 中使用。
 
 如果我們將視窗的寬度縮窄，增加 flexbox container 的高度，並且將 flexbox container 的 `flex-wrap` 設定為 `wrap`，則 flexbox items 將呈 multi-line 排列
 
@@ -185,7 +189,7 @@ CSS styling 當中最常做的事情莫過於將一個 element **水平置中**�
 
 ![align-content-start](/flexbox/align-content-start.png)
 
-`align-content` 不是一個經常使用的 property，其實大部分的時間只要使用 `jutify-content` 和 `align-items` 就可以分別在水平和垂直方向進行排列
+`align-content` 不是一個經常使用的 property，其實大部分的時間只要使用 `jutify-content` 和 `align-items` 就可以分別在水平和垂直方向進行排列。
 
 ## `flex-direction` property
 
@@ -202,11 +206,11 @@ CSS styling 當中最常做的事情莫過於將一個 element **水平置中**�
 
 ![direction-column](/flexbox/direction-column.png)
 
-可以看到 `justify-content` 不再以水平方向作用，而是改以垂直方向來產生 `center` 的效果
+可以看到 `justify-content` 不再以水平方向作用，而是改以垂直方向來產生 `center` 的效果。
 
 # flexbox item properties
 
-flexbox item properties 用於設定某特定 flexbox item 的尺寸及排列方式等等
+flexbox item properties 用於設定某特定 flexbox item 的尺寸及排列方式等等。
 
 ## `flex-shrink` property
 
@@ -256,7 +260,7 @@ flexbox item properties 用於設定某特定 flexbox item 的尺寸及排列方
 
 ![flex-grow-2](/flexbox/flex-grow-2.png)
 
-如果我們將 item2 設定為 `flex-row: 2` 並將 item1 設定為 `flex-grow: 1`，則 flexbox 會將 container 的所有剩餘空間，以 2:1 的方式增加到 item2 和 item3 上面
+如果我們將 item2 設定為 `flex-row: 2` 並將 item1 設定為 `flex-grow: 1`，則 flexbox 會將 container 的所有剩餘空間，以 2:1 的方式增加到 item2 和 item3 上面。
 
 此處需特別注意，**item2 的寬度並不會剛好是 item3 的兩倍**，因為他們兩個各自都有原本的寬度，flexbox 只是將剩餘的空間以 2:1 的比例加到他們兩個上面而已
 
@@ -309,11 +313,11 @@ align-self property 用於設定單一 flexbox item 於垂直方向對齊的方�
 
 ![align-self](/flexbox/align-self.png)
 
-以上大概就是我認為比較常用的 flexbox properties，它們不是全部，但學會這些，大概就能處理 90% 使用 flexbox 的場景了
+以上大概就是我認為比較常用的 flexbox properties，它們不是全部，但學會這些，大概就能處理 90% 使用 flexbox 的場景了。
 
-其他例如 flexbox `order` property 我甚至認為應該避免使用，它會讓 DOM 順序的管理變得混亂，除非是非使用不可的場景，否則幾乎是沒有機會用到
+其他例如 flexbox `order` property 我甚至認為應該避免使用，它會讓 DOM 順序的管理變得混亂，除非是非使用不可的場景，否則幾乎是沒有機會用到。
 
-就如同上面提到的，我覺得初學 flexbox 時若常常搞不清楚某個 property 的行為，則往往是因為忽略了 property 的**預設值**這件事情
+就如同上面提到的，我覺得初學 flexbox 時若常常搞不清楚某個 property 的行為，則往往是因為忽略了 property 的**預設值**這件事情。
 
 # Shorthand - `flex`
 
@@ -339,7 +343,7 @@ align-self property 用於設定單一 flexbox item 於垂直方向對齊的方�
 }
 ```
 
-然而和 `margin`、`padding` 等 properties 一樣，`flex` 可能不會有完整的三個數值
+然而和 `margin`、`padding` 等 properties 一樣，`flex` 可能不會有完整的三個數值。
 
 當 `flex` 只有**兩個**數值時，兩個數值可能分別代表：
 
@@ -353,7 +357,7 @@ align-self property 用於設定單一 flexbox item 於垂直方向對齊的方�
 3. `none`
 4. `inherit`
 
-`flex` 的定義如果沒有記清楚，很容易會有預期外的效果，這邊提供幾個常見的用法
+`flex` 的定義如果沒有記清楚，很容易會有預期外的效果，這邊提供幾個常見的用法。
 
 ### `flex: 0 auto;`
 
@@ -375,7 +379,7 @@ align-self property 用於設定單一 flexbox item 於垂直方向對齊的方�
 
 ### `flex: 100px`
 
-這等同於 `flex: 1 100px`，也等同於 `flex: 1 1 100px`，也就是，**雖然沒有特別寫，但其實已經把 `flex-shrink` 設定為 `1`，也已經把 `flex-grow` 設定為 `1` 了**
+這等同於 `flex: 1 100px`，也等同於 `flex: 1 1 100px`，也就是，**雖然沒有特別寫，但其實已經把 `flex-shrink` 設定為 `1`，也已經把 `flex-grow` 設定為 `1` 了**。
 
 ### `flex: 0 0`
 
@@ -383,11 +387,11 @@ align-self property 用於設定單一 flexbox item 於垂直方向對齊的方�
 
 由以上例子可以歸納出：
 
-- 除了 `none` 之外，只要沒有特別設定，`flex-shrink` 都會被預設為 `1`，也就是預設該 flexbox item 無論如何都會在空間不足時被壓縮
+- 除了 `none` 之外，只要沒有特別設定，`flex-shrink` 都會被預設為 `1`，也就是預設該 flexbox item 無論如何都會在空間不足時被壓縮。
 
-- 當數值只有一個值，且該數值如果是 **pixel 值**，則代表 `flex-grow` 被預設為 `1`，也就是**當 `flex` 被設定為像素質的時候，代表你希望設定該 flexbox item 會擴張，且會以 `flex-basic` 為該像素質的基礎進行擴張**
+- 當數值只有一個值，且該數值如果是 **pixel 值**，則代表 `flex-grow` 被預設為 `1`，也就是**當 `flex` 被設定為像素質的時候，代表你希望設定該 flexbox item 會擴張，且會以 `flex-basic` 為該像素質的基礎進行擴張**。
 
-- 當數值只有一個值，且該數值是**正整數**，則代表 `flex-basic` 被預設為 `0px`，也就是**當 `flex` 被設定為正整數的時候，代表你希望設定該 flexbox item 在 `flex-basic` 為 `0px` 的基礎上，進行擴張，且以該正整數的比例進行擴張**
+- 當數值只有一個值，且該數值是**正整數**，則代表 `flex-basic` 被預設為 `0px`，也就是**當 `flex` 被設定為正整數的時候，代表你希望設定該 flexbox item 在 `flex-basic` 為 `0px` 的基礎上，進行擴張，且以該正整數的比例進行擴張**。
 
 # Flexbox properties values
 

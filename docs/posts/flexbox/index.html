@@ -7,12 +7,12 @@
 <meta name="robots" content="index, follow">
 <title>Flexbox | 後端工程師的前端之路</title>
 <meta name="keywords" content="" />
-<meta name="description" content="本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄
-基本觀念 其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 flexbox container properties 和 flexbox item properties 兩種
-所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements
-例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html
-&lt;div class=&#34;flexbox-container&#34;&gt; &lt;div class=&#34;flexbox-item flexbox-item1&#34;&gt;&lt;/div&gt; &lt;div class=&#34;flexbox-item flexbox-item2&#34;&gt;&lt;/div&gt; &lt;div class=&#34;flexbox-item flexbox-item3&#34;&gt;&lt;/div&gt; &lt;/div&gt; 而 flexbox 的 properties 也就是分成專門給 flexbox container（設定在 flexbox-container class）與專門給 flexbox items （設定在 flexbox-item1、flexbox-item2 與 flexbox-item3 classes）兩種 properties
-其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items 在一個方向上（水平或垂直） 排列的方式">
+<meta name="description" content="本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄。
+基本觀念 其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 flexbox container properties 和 flexbox item properties 兩種。
+所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements。
+例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html。
+&lt;div class=&#34;flexbox-container&#34;&gt; &lt;div class=&#34;flexbox-item flexbox-item1&#34;&gt;&lt;/div&gt; &lt;div class=&#34;flexbox-item flexbox-item2&#34;&gt;&lt;/div&gt; &lt;div class=&#34;flexbox-item flexbox-item3&#34;&gt;&lt;/div&gt; &lt;/div&gt; 而 flexbox 的 properties 也就是分成專門給 flexbox container（設定在 flexbox-container class）與專門給 flexbox items （設定在 flexbox-item1、flexbox-item2 與 flexbox-item3 classes）兩種 properties。
+其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items 在一個方向上（水平或垂直） 排列的方式。">
 <meta name="author" content="">
 <link rel="canonical" href="http://theshaneyu.github.io/posts/flexbox/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
@@ -62,12 +62,12 @@
 
     </style>
 </noscript><meta property="og:title" content="Flexbox" />
-<meta property="og:description" content="本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄
-基本觀念 其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 flexbox container properties 和 flexbox item properties 兩種
-所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements
-例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html
-&lt;div class=&#34;flexbox-container&#34;&gt; &lt;div class=&#34;flexbox-item flexbox-item1&#34;&gt;&lt;/div&gt; &lt;div class=&#34;flexbox-item flexbox-item2&#34;&gt;&lt;/div&gt; &lt;div class=&#34;flexbox-item flexbox-item3&#34;&gt;&lt;/div&gt; &lt;/div&gt; 而 flexbox 的 properties 也就是分成專門給 flexbox container（設定在 flexbox-container class）與專門給 flexbox items （設定在 flexbox-item1、flexbox-item2 與 flexbox-item3 classes）兩種 properties
-其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items 在一個方向上（水平或垂直） 排列的方式" />
+<meta property="og:description" content="本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄。
+基本觀念 其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 flexbox container properties 和 flexbox item properties 兩種。
+所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements。
+例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html。
+&lt;div class=&#34;flexbox-container&#34;&gt; &lt;div class=&#34;flexbox-item flexbox-item1&#34;&gt;&lt;/div&gt; &lt;div class=&#34;flexbox-item flexbox-item2&#34;&gt;&lt;/div&gt; &lt;div class=&#34;flexbox-item flexbox-item3&#34;&gt;&lt;/div&gt; &lt;/div&gt; 而 flexbox 的 properties 也就是分成專門給 flexbox container（設定在 flexbox-container class）與專門給 flexbox items （設定在 flexbox-item1、flexbox-item2 與 flexbox-item3 classes）兩種 properties。
+其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items 在一個方向上（水平或垂直） 排列的方式。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://theshaneyu.github.io/posts/flexbox/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-02-15T18:33:47&#43;08:00" />
@@ -75,12 +75,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flexbox"/>
-<meta name="twitter:description" content="本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄
-基本觀念 其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 flexbox container properties 和 flexbox item properties 兩種
-所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements
-例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html
-&lt;div class=&#34;flexbox-container&#34;&gt; &lt;div class=&#34;flexbox-item flexbox-item1&#34;&gt;&lt;/div&gt; &lt;div class=&#34;flexbox-item flexbox-item2&#34;&gt;&lt;/div&gt; &lt;div class=&#34;flexbox-item flexbox-item3&#34;&gt;&lt;/div&gt; &lt;/div&gt; 而 flexbox 的 properties 也就是分成專門給 flexbox container（設定在 flexbox-container class）與專門給 flexbox items （設定在 flexbox-item1、flexbox-item2 與 flexbox-item3 classes）兩種 properties
-其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items 在一個方向上（水平或垂直） 排列的方式"/>
+<meta name="twitter:description" content="本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄。
+基本觀念 其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 flexbox container properties 和 flexbox item properties 兩種。
+所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements。
+例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html。
+&lt;div class=&#34;flexbox-container&#34;&gt; &lt;div class=&#34;flexbox-item flexbox-item1&#34;&gt;&lt;/div&gt; &lt;div class=&#34;flexbox-item flexbox-item2&#34;&gt;&lt;/div&gt; &lt;div class=&#34;flexbox-item flexbox-item3&#34;&gt;&lt;/div&gt; &lt;/div&gt; 而 flexbox 的 properties 也就是分成專門給 flexbox container（設定在 flexbox-container class）與專門給 flexbox items （設定在 flexbox-item1、flexbox-item2 與 flexbox-item3 classes）兩種 properties。
+其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items 在一個方向上（水平或垂直） 排列的方式。"/>
 
 
 <script type="application/ld+json">
@@ -109,12 +109,12 @@
   "@type": "BlogPosting",
   "headline": "Flexbox",
   "name": "Flexbox",
-  "description": "本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄\n基本觀念 其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 flexbox container properties 和 flexbox item properties 兩種\n所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements\n例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html\n\u0026lt;div class=\u0026#34;flexbox-container\u0026#34;\u0026gt; \u0026lt;div class=\u0026#34;flexbox-item flexbox-item1\u0026#34;\u0026gt;\u0026lt;/div\u0026gt; \u0026lt;div class=\u0026#34;flexbox-item flexbox-item2\u0026#34;\u0026gt;\u0026lt;/div\u0026gt; \u0026lt;div class=\u0026#34;flexbox-item flexbox-item3\u0026#34;\u0026gt;\u0026lt;/div\u0026gt; \u0026lt;/div\u0026gt; 而 flexbox 的 properties 也就是分成專門給 flexbox container（設定在 flexbox-container class）與專門給 flexbox items （設定在 flexbox-item1、flexbox-item2 與 flexbox-item3 classes）兩種 properties\n其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items 在一個方向上（水平或垂直） 排列的方式",
+  "description": "本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄。\n基本觀念 其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 flexbox container properties 和 flexbox item properties 兩種。\n所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements。\n例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html。\n\u0026lt;div class=\u0026#34;flexbox-container\u0026#34;\u0026gt; \u0026lt;div class=\u0026#34;flexbox-item flexbox-item1\u0026#34;\u0026gt;\u0026lt;/div\u0026gt; \u0026lt;div class=\u0026#34;flexbox-item flexbox-item2\u0026#34;\u0026gt;\u0026lt;/div\u0026gt; \u0026lt;div class=\u0026#34;flexbox-item flexbox-item3\u0026#34;\u0026gt;\u0026lt;/div\u0026gt; \u0026lt;/div\u0026gt; 而 flexbox 的 properties 也就是分成專門給 flexbox container（設定在 flexbox-container class）與專門給 flexbox items （設定在 flexbox-item1、flexbox-item2 與 flexbox-item3 classes）兩種 properties。\n其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items 在一個方向上（水平或垂直） 排列的方式。",
   "keywords": [
     
   ],
-  "articleBody": "本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄\n基本觀念 其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 flexbox container properties 和 flexbox item properties 兩種\n所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements\n例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html\ndiv class=\"flexbox-container\" div class=\"flexbox-item flexbox-item1\"div div class=\"flexbox-item flexbox-item2\"div div class=\"flexbox-item flexbox-item3\"div div 而 flexbox 的 properties 也就是分成專門給 flexbox container（設定在 flexbox-container class）與專門給 flexbox items （設定在 flexbox-item1、flexbox-item2 與 flexbox-item3 classes）兩種 properties\n其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items 在一個方向上（水平或垂直） 排列的方式\n顯然這邊特別提到一個方向上，表示會有能夠在兩個方向上（水平和垂直）設定排列方式的屬性，也就是 grid property\n預設值 承上方所描述的 html，今天將 flexbox item 相關 classes 做如下設定（省略掉一些無關的 styling）：\n.flexbox-item { width: 200px; margin: 10px; border: 3px solid #333; background-color: #dfdfdf; } .flexbox-item1 { min-height: 100px; } .flexbox-item2 { min-height: 200px; } .flexbox-item3 { min-height: 300px; } 會得到這樣的三個高度不一樣的矩形：\n而如果我們希望這三個 items 按照 flexbox 的方式進行排列，只要在 flexbox container 內設定：\n.flexbox-container { display: flex; } 便可將三個 items 像這樣做排列：\n這邊可以發現三件事情：\n 三個 items 呈水平方向排列 三個 items 靠左排列 三個不同高度的 items 變成相同的高度  這邊便會帶到另外一個後來的我希望當初學習 flexbox 時更加關注的事情：flexbox properties 的預設值\n會出現上述三個現象是因為當我們把 flexbox container 的 display 設定為 flex 時，該 flexbox container 會自動擁有一些 flexbox properties，且它們將被設定為各自的預設值\n flex-direction 被設定為預設值 row，使得三個 items 呈水平方向排列 \u0008justify-content 被設定為預設值 flex-start，使得三個 items 向左靠攏 align-items 被設定為預設值 stretch，使得 item1 和 item2 被拉伸為和 item3 相同的高度  我也將在本篇的結尾附上一些我覺得比較重要的 properties 的預設值\n接著再來複習一下，flexbox properties 分成用於設定 parent 的 flexbox container properties 和用於設定 children 的 flexbox item properties，接下來將會先介紹 flexbox container properties 再介紹 flexbox item properties\nflexbox container properties justify-content property CSS styling 當中最常做的事情莫過於將一個 element 水平置中，此時我們可以透過對 flexbox container 設定 justify-content: center 來達到水平置中\n.flexbox-container { display: flex; justify-content: center; } 將 justify-content 設定為 center 後，所有 children items 將會被擠到中間，且彼此之間不會預留空間（此處的空隙是因為 flexbox-item class 有設定 margin）\n如果你希望在 items 之間盡可能地塞滿空間，可以將 justify-content 設定為 space-between\n.flexbox-container { display: flex; justify-content: space-between; } 如果希望將 items 之間的空間平均地分配到 items 的兩邊，可以使用 space-around\n.flexbox-container { display: flex; justify-content: space-around; } align-items property 如剛才所提到的，一但將 flexbox container 設定為 display:flex，三個 items 的高度都將會變成一樣，是因為 align-items 的預設值為 stretch，而如果將 align-items 設定為 flex-start，則三個 items 的高度將會回到原本的值，並且朝上靠攏\n.flexbox-container { display: flex; justify-content: space-around; align-items: flex-start; } 而另外一個在 css styling 中最常做的事情便是垂直置中，而這個可以透過將 align-items 設定為 center 來達到，在 flexbox 推出之前，要將 element 做垂直置中幾乎是不可能的事\n.flexbox-container { display: flex; justify-content: space-around; align-items: center; } align-content property 另一個不是很常用的 property 是 align-content property，align-content property 只會在多行的 flexbox items 中使用\n如果我們將視窗的寬度縮窄，增加 flexbox container 的高度，並且將 flexbox container 的 flex-wrap 設定為 wrap，則 flexbox items 將呈 multi-line 排列\n.flexbox-container { display: flex; justify-content: space-around; align-items: center; height: 700px; flex-wrap: wrap; } 而如果我們再將 align-content 設定為 flex-start，則這些 multi-line 的 items 將會在各自的 row 向上靠攏\n.flexbox-container { display: flex; justify-content: space-around; align-items: center; height: 700px; flex-wrap: wrap; align-content: flex-start; } align-content 不是一個經常使用的 property，其實大部分的時間只要使用 jutify-content 和 align-items 就可以分別在水平和垂直方向進行排列\nflex-direction property 如同上面提到的，flex-direction 的預設值為 row，而如果我們將之設定為 column，並設定 jutify-content: center\n.flexbox-container { height: 800px; display: flex; flex-direction: column; justify-content: center; } 可以看到 justify-content 不再以水平方向作用，而是改以垂直方向來產生 center 的效果\nflexbox item properties flexbox item properties 用於設定某特定 flexbox item 的尺寸及排列方式等等\nflex-shrink property 預設情況下，如果我們將瀏覽器視窗的寬度縮小至小於 flexbox container 的寬度時，flexbox 會自動將每個 flexbox items 的寬度縮小\n而如果我們希望 item1 永遠保值原本的寬度而不要被縮小，則可以針對 item1 設定 flex-shrink: 0\n.flexbox-item-1 { min-height: 100px; flex-shrink: 0; } flex-grow property 如果我們希望在 flexbox container 的寬度增加時，讓 item3 的寬度也隨之增加，並填滿所有剩餘的空間，可以設定 flex-grow: 1\n.flexbox-item-3 { min-height: 300px; flex-grow: 1; } 如果我們將 item2 也設定 flex-grow: 1，則 item2 和 item3 將會平分所有剩餘的空間\n.flexbox-item-2 { min-height: 200px; flex-grow: 1; } .flexbox-item-3 { min-height: 300px; flex-grow: 1; } 如果我們將 item2 設定為 flex-row: 2 並將 item1 設定為 flex-grow: 1，則 flexbox 會將 container 的所有剩餘空間，以 2:1 的方式增加到 item2 和 item3 上面\n此處需特別注意，item2 的寬度並不會剛好是 item3 的兩倍，因為他們兩個各自都有原本的寬度，flexbox 只是將剩餘的空間以 2:1 的比例加到他們兩個上面而已\n.flexbox-item-2 { min-height: 200px; flex-grow: 2; } .flexbox-item-3 { min-height: 300px; flex-grow: 1; } 如果我們希望 item2 的寬度剛好是 item3 的兩倍，可以把兩個 items 都設定 flex-basic: 0，如此一來 flexbox 便會假設 item2 和 item3 的原始寬度都是 0，然後再將剩餘的空間以 2:1 的比例分配給 item2 和 item3\n.flexbox-item-2 { min-height: 200px; flex-grow: 2; flex-basis: 0; } .flexbox-item-3 { min-height: 300px; flex-grow: 1; flex-basis: 0; } align-self property align-self property 用於設定單一 flexbox item 於垂直方向對齊的方式\n例如如果我們將 item2 設定 align-self: center，則 item2 將會回復到原本的高度（複習：item2 原本的高度是 200px，會被拉伸成 300px 是因為 flexbox container 的 align-items 值預設為 stretch），並且垂直置中\n.flexbox-item-2 { min-height: 200px; flex-grow: 2; flex-basis: 0; align-self: center; } 以上大概就是我認為比較常用的 flexbox properties，它們不是全部，但學會這些，大概就能處理 90% 使用 flexbox 的場景了\n其他例如 flexbox order property 我甚至認為應該避免使用，它會讓 DOM 順序的管理變得混亂，除非是非使用不可的場景，否則幾乎是沒有機會用到\n就如同上面提到的，我覺得初學 flexbox 時若常常搞不清楚某個 property 的行為，則往往是因為忽略了 property 的預設值這件事情\nShorthand - flex 另一個常見用於設定 flexbox item 的方式是使用 shorthand - flex property\nflex 為 flex-grow、flex-shrink、flex-basis 的縮寫\n例如\n.flexbox-item { flex: 1 1 0px; } 等同於\n.flexbox-item { flex-grow: 1; flex-shrink: 1; flex-basic: 0px; } 然而和 margin、padding 等 properties 一樣，flex 可能不會有完整的三個數值\n當 flex 只有兩個數值時，兩個數值可能分別代表：\n flex-grow ＆ flex-basis \u0008flex-grow ＆ flex-shrink  而當 flex 只有一個數值時，該數值可以是：\n flex-grow flex-basis none inherit  flex 的定義如果沒有記清楚，很容易會有預期外的效果，這邊提供幾個常見的用法\nflex: 0 auto; 這等同於 flex: initial，也等同於所有三個數值的預設值：flex: 0 1 auto;\n這種寫法雖然沒有特別設定 flex-shrink，但其實已經預設把 flex-shink 設定為 1，因此該 flexbox item 會有它最初始預設的行為，也就是當 flexbox container 留有多餘的空間時，便可以根據 flexbox container 的設定來彈性地調整 flexbox items 的排列方式，同時在 flexbox container \u0008 被壓縮時，flexbox items 也跟著被壓縮。\nflex: auto 這等同於 flex; 1 1 auto，也就是 flexbox item 不但會空間不足時被壓縮，也會在有多餘空間時擴張。\nflex: none 這等同於 flex: 0 0 auto，也就是 flexbox items 不會被壓縮，也不會擴張，也就是完全不伸縮的意思。\nflex: 1 這等同於 flex: 1 0px，也等同於 flex: 1 1 0px，所以需要特別注意，雖然沒有特別寫，但其實已經把 flex-shrink 設定為 1，也已經把 flex-basix 設定為 0px 了，也就是 flexbox 會在假設該 item 寬度為 0 的情況下，將剩餘的空間依照該正整數的比例分配給該 flexbox item。\nflex: 100px 這等同於 flex: 1 100px，也等同於 flex: 1 1 100px，也就是，雖然沒有特別寫，但其實已經把 flex-shrink 設定為 1，也已經把 flex-grow 設定為 1 了\nflex: 0 0 等同於 flex: 0 0 0px，就是雖然看起來只有設定 flex-grow 和 flex-shrink，但其實也把 flex-basic 設定成 0 了\n由以上例子可以歸納出：\n  除了 none 之外，只要沒有特別設定，flex-shrink 都會被預設為 1，也就是預設該 flexbox item 無論如何都會在空間不足時被壓縮\n  當數值只有一個值，且該數值如果是 pixel 值，則代表 flex-grow 被預設為 1，也就是當 flex 被設定為像素質的時候，代表你希望設定該 flexbox item 會擴張，且會以 flex-basic 為該像素質的基礎進行擴張\n  當數值只有一個值，且該數值是正整數，則代表 flex-basic 被預設為 0px，也就是當 flex 被設定為正整數的時候，代表你希望設定該 flexbox item 在 flex-basic 為 0px 的基礎上，進行擴張，且以該正整數的比例進行擴張\n  Flexbox properties values 文章的結尾附上一些常見的 flexbox properties 的所有可選值，與其預設值（粗體為預設值）\nflexbox container  flex-direction: row | row-reverse | column | column-reverse flex-wrap: nowrap | wrap | wrap-reverse justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly align-items: stretch | flex-start | flex-end | center | baseline align-content: normal | flex-start | flex-end | center | space-between | space-around | space-evenly | stretch flex-grow: 0 flex-shrink: 1 flex-basic: auto align-self: auto | flex-start | flex-end | center | baseline | stretch  ",
-  "wordCount" : "896",
+  "articleBody": "本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄。\n基本觀念 其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 flexbox container properties 和 flexbox item properties 兩種。\n所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements。\n例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html。\ndiv class=\"flexbox-container\" div class=\"flexbox-item flexbox-item1\"div div class=\"flexbox-item flexbox-item2\"div div class=\"flexbox-item flexbox-item3\"div div 而 flexbox 的 properties 也就是分成專門給 flexbox container（設定在 flexbox-container class）與專門給 flexbox items （設定在 flexbox-item1、flexbox-item2 與 flexbox-item3 classes）兩種 properties。\n其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items 在一個方向上（水平或垂直） 排列的方式。\n顯然這邊特別提到一個方向上，表示會有能夠在兩個方向上（水平和垂直）設定排列方式的屬性，也就是 grid property。\n預設值 承上方所描述的 html，今天將 flexbox item 相關 classes 做如下設定（省略掉一些無關的 styling）：\n.flexbox-item { width: 200px; margin: 10px; border: 3px solid #333; background-color: #dfdfdf; } .flexbox-item1 { min-height: 100px; } .flexbox-item2 { min-height: 200px; } .flexbox-item3 { min-height: 300px; } 會得到這樣的三個高度不一樣的矩形：\n而如果我們希望這三個 items 按照 flexbox 的方式進行排列，只要在 flexbox container 內設定：\n.flexbox-container { display: flex; } 便可將三個 items 像這樣做排列：\n這邊可以發現三件事情：\n 三個 items 呈水平方向排列 三個 items 靠左排列 三個不同高度的 items 變成相同的高度  這邊便會帶到另外一個後來的我希望當初學習 flexbox 時更加關注的事情：flexbox properties 的預設值。\n會出現上述三個現象是因為當我們把 flexbox container 的 display 設定為 flex 時，該 flexbox container 會自動擁有一些 flexbox properties，且它們將被設定為各自的預設值：\n flex-direction 被設定為預設值 row，使得三個 items 呈水平方向排列 \u0008justify-content 被設定為預設值 flex-start，使得三個 items 向左靠攏 align-items 被設定為預設值 stretch，使得 item1 和 item2 被拉伸為和 item3 相同的高度  我也將在本篇的結尾附上一些我覺得比較重要的 properties 的預設值。\n接著再來複習一下，flexbox properties 分成用於設定 parent 的 flexbox container properties 和用於設定 children 的 flexbox item properties，接下來將會先介紹 flexbox container properties 再介紹 flexbox item properties。\nflexbox container properties justify-content property CSS styling 當中最常做的事情莫過於將一個 element 水平置中，此時我們可以透過對 flexbox container 設定 justify-content: center 來達到水平置中\n.flexbox-container { display: flex; justify-content: center; } 將 justify-content 設定為 center 後，所有 children items 將會被擠到中間，且彼此之間不會預留空間（此處的空隙是因為 flexbox-item class 有設定 margin）。\n如果你希望在 items 之間盡可能地塞滿空間，可以將 justify-content 設定為 space-between\n.flexbox-container { display: flex; justify-content: space-between; } 如果希望將 items 之間的空間平均地分配到 items 的兩邊，可以使用 space-around\n.flexbox-container { display: flex; justify-content: space-around; } align-items property 如剛才所提到的，一但將 flexbox container 設定為 display:flex，三個 items 的高度都將會變成一樣，是因為 align-items 的預設值為 stretch。\n而如果將 align-items 設定為 flex-start，則三個 items 的高度將會回到原本的值，並且朝上靠攏\n.flexbox-container { display: flex; justify-content: space-around; align-items: flex-start; } 而另外一個在 css styling 中最常做的事情便是垂直置中，而這個可以透過將 align-items 設定為 center 來達到\n.flexbox-container { display: flex; justify-content: space-around; align-items: center; } 在 flexbox 之前，要將 element 做垂直置中幾乎是不可能的事。\nalign-content property 另一個不是很常用的 property 是 align-content property，align-content property 只會在多行的 flexbox items 中使用。\n如果我們將視窗的寬度縮窄，增加 flexbox container 的高度，並且將 flexbox container 的 flex-wrap 設定為 wrap，則 flexbox items 將呈 multi-line 排列\n.flexbox-container { display: flex; justify-content: space-around; align-items: center; height: 700px; flex-wrap: wrap; } 而如果我們再將 align-content 設定為 flex-start，則這些 multi-line 的 items 將會在各自的 row 向上靠攏\n.flexbox-container { display: flex; justify-content: space-around; align-items: center; height: 700px; flex-wrap: wrap; align-content: flex-start; } align-content 不是一個經常使用的 property，其實大部分的時間只要使用 jutify-content 和 align-items 就可以分別在水平和垂直方向進行排列。\nflex-direction property 如同上面提到的，flex-direction 的預設值為 row，而如果我們將之設定為 column，並設定 jutify-content: center\n.flexbox-container { height: 800px; display: flex; flex-direction: column; justify-content: center; } 可以看到 justify-content 不再以水平方向作用，而是改以垂直方向來產生 center 的效果。\nflexbox item properties flexbox item properties 用於設定某特定 flexbox item 的尺寸及排列方式等等。\nflex-shrink property 預設情況下，如果我們將瀏覽器視窗的寬度縮小至小於 flexbox container 的寬度時，flexbox 會自動將每個 flexbox items 的寬度縮小\n而如果我們希望 item1 永遠保值原本的寬度而不要被縮小，則可以針對 item1 設定 flex-shrink: 0\n.flexbox-item-1 { min-height: 100px; flex-shrink: 0; } flex-grow property 如果我們希望在 flexbox container 的寬度增加時，讓 item3 的寬度也隨之增加，並填滿所有剩餘的空間，可以設定 flex-grow: 1\n.flexbox-item-3 { min-height: 300px; flex-grow: 1; } 如果我們將 item2 也設定 flex-grow: 1，則 item2 和 item3 將會平分所有剩餘的空間\n.flexbox-item-2 { min-height: 200px; flex-grow: 1; } .flexbox-item-3 { min-height: 300px; flex-grow: 1; } 如果我們將 item2 設定為 flex-row: 2 並將 item1 設定為 flex-grow: 1，則 flexbox 會將 container 的所有剩餘空間，以 2:1 的方式增加到 item2 和 item3 上面。\n此處需特別注意，item2 的寬度並不會剛好是 item3 的兩倍，因為他們兩個各自都有原本的寬度，flexbox 只是將剩餘的空間以 2:1 的比例加到他們兩個上面而已\n.flexbox-item-2 { min-height: 200px; flex-grow: 2; } .flexbox-item-3 { min-height: 300px; flex-grow: 1; } 如果我們希望 item2 的寬度剛好是 item3 的兩倍，可以把兩個 items 都設定 flex-basic: 0，如此一來 flexbox 便會假設 item2 和 item3 的原始寬度都是 0，然後再將剩餘的空間以 2:1 的比例分配給 item2 和 item3\n.flexbox-item-2 { min-height: 200px; flex-grow: 2; flex-basis: 0; } .flexbox-item-3 { min-height: 300px; flex-grow: 1; flex-basis: 0; } align-self property align-self property 用於設定單一 flexbox item 於垂直方向對齊的方式\n例如如果我們將 item2 設定 align-self: center，則 item2 將會回復到原本的高度（複習：item2 原本的高度是 200px，會被拉伸成 300px 是因為 flexbox container 的 align-items 值預設為 stretch），並且垂直置中\n.flexbox-item-2 { min-height: 200px; flex-grow: 2; flex-basis: 0; align-self: center; } 以上大概就是我認為比較常用的 flexbox properties，它們不是全部，但學會這些，大概就能處理 90% 使用 flexbox 的場景了。\n其他例如 flexbox order property 我甚至認為應該避免使用，它會讓 DOM 順序的管理變得混亂，除非是非使用不可的場景，否則幾乎是沒有機會用到。\n就如同上面提到的，我覺得初學 flexbox 時若常常搞不清楚某個 property 的行為，則往往是因為忽略了 property 的預設值這件事情。\nShorthand - flex 另一個常見用於設定 flexbox item 的方式是使用 shorthand - flex property\nflex 為 flex-grow、flex-shrink、flex-basis 的縮寫\n例如\n.flexbox-item { flex: 1 1 0px; } 等同於\n.flexbox-item { flex-grow: 1; flex-shrink: 1; flex-basic: 0px; } 然而和 margin、padding 等 properties 一樣，flex 可能不會有完整的三個數值。\n當 flex 只有兩個數值時，兩個數值可能分別代表：\n flex-grow ＆ flex-basis \u0008flex-grow ＆ flex-shrink  而當 flex 只有一個數值時，該數值可以是：\n flex-grow flex-basis none inherit  flex 的定義如果沒有記清楚，很容易會有預期外的效果，這邊提供幾個常見的用法。\nflex: 0 auto; 這等同於 flex: initial，也等同於所有三個數值的預設值：flex: 0 1 auto;\n這種寫法雖然沒有特別設定 flex-shrink，但其實已經預設把 flex-shink 設定為 1，因此該 flexbox item 會有它最初始預設的行為，也就是當 flexbox container 留有多餘的空間時，便可以根據 flexbox container 的設定來彈性地調整 flexbox items 的排列方式，同時在 flexbox container \u0008 被壓縮時，flexbox items 也跟著被壓縮。\nflex: auto 這等同於 flex; 1 1 auto，也就是 flexbox item 不但會空間不足時被壓縮，也會在有多餘空間時擴張。\nflex: none 這等同於 flex: 0 0 auto，也就是 flexbox items 不會被壓縮，也不會擴張，也就是完全不伸縮的意思。\nflex: 1 這等同於 flex: 1 0px，也等同於 flex: 1 1 0px，所以需要特別注意，雖然沒有特別寫，但其實已經把 flex-shrink 設定為 1，也已經把 flex-basix 設定為 0px 了，也就是 flexbox 會在假設該 item 寬度為 0 的情況下，將剩餘的空間依照該正整數的比例分配給該 flexbox item。\nflex: 100px 這等同於 flex: 1 100px，也等同於 flex: 1 1 100px，也就是，雖然沒有特別寫，但其實已經把 flex-shrink 設定為 1，也已經把 flex-grow 設定為 1 了。\nflex: 0 0 等同於 flex: 0 0 0px，就是雖然看起來只有設定 flex-grow 和 flex-shrink，但其實也把 flex-basic 設定成 0 了\n由以上例子可以歸納出：\n  除了 none 之外，只要沒有特別設定，flex-shrink 都會被預設為 1，也就是預設該 flexbox item 無論如何都會在空間不足時被壓縮。\n  當數值只有一個值，且該數值如果是 pixel 值，則代表 flex-grow 被預設為 1，也就是當 flex 被設定為像素質的時候，代表你希望設定該 flexbox item 會擴張，且會以 flex-basic 為該像素質的基礎進行擴張。\n  當數值只有一個值，且該數值是正整數，則代表 flex-basic 被預設為 0px，也就是當 flex 被設定為正整數的時候，代表你希望設定該 flexbox item 在 flex-basic 為 0px 的基礎上，進行擴張，且以該正整數的比例進行擴張。\n  Flexbox properties values 文章的結尾附上一些常見的 flexbox properties 的所有可選值，與其預設值（粗體為預設值）\nflexbox container  flex-direction: row | row-reverse | column | column-reverse flex-wrap: nowrap | wrap | wrap-reverse justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly align-items: stretch | flex-start | flex-end | center | baseline align-content: normal | flex-start | flex-end | center | space-between | space-around | space-evenly | stretch flex-grow: 0 flex-shrink: 1 flex-basic: auto align-self: auto | flex-start | flex-end | center | baseline | stretch  ",
+  "wordCount" : "898",
   "inLanguage": "en",
   "datePublished": "2022-02-15T18:33:47+08:00",
   "dateModified": "2022-02-15T18:33:47+08:00",
@@ -189,19 +189,19 @@
 
 </div>
   </header> 
-  <div class="post-content"><p>本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄</p>
+  <div class="post-content"><p>本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄。</p>
 <h1 id="基本觀念">基本觀念<a hidden class="anchor" aria-hidden="true" href="#基本觀念">#</a></h1>
-<p>其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 <strong>flexbox container properties</strong> 和 <strong>flexbox item properties</strong> 兩種</p>
-<p>所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements</p>
-<p>例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html</p>
+<p>其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 <strong>flexbox container properties</strong> 和 <strong>flexbox item properties</strong> 兩種。</p>
+<p>所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements。</p>
+<p>例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;flexbox-container&#34;</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;flexbox-item flexbox-item1&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;flexbox-item flexbox-item2&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;flexbox-item flexbox-item3&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>而 flexbox 的 properties 也就是分成專門給 <strong>flexbox container</strong>（設定在 <code>flexbox-container</code> class）與專門給 <strong>flexbox items</strong> （設定在 <code>flexbox-item1</code>、<code>flexbox-item2</code> 與 <code>flexbox-item3</code> classes）兩種 properties</p>
-<p>其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items <strong>在一個方向上（水平或垂直）</strong> 排列的方式</p>
-<p>顯然這邊特別提到一個方向上，表示會有能夠在兩個方向上（水平和垂直）設定排列方式的屬性，也就是 <code>grid</code> property</p>
+</code></pre></div><p>而 flexbox 的 properties 也就是分成專門給 <strong>flexbox container</strong>（設定在 <code>flexbox-container</code> class）與專門給 <strong>flexbox items</strong> （設定在 <code>flexbox-item1</code>、<code>flexbox-item2</code> 與 <code>flexbox-item3</code> classes）兩種 properties。</p>
+<p>其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items <strong>在一個方向上（水平或垂直）</strong> 排列的方式。</p>
+<p>顯然這邊特別提到一個方向上，表示會有能夠在兩個方向上（水平和垂直）設定排列方式的屬性，也就是 <code>grid</code> property。</p>
 <h1 id="預設值">預設值<a hidden class="anchor" aria-hidden="true" href="#預設值">#</a></h1>
 <p>承上方所描述的 html，今天將 flexbox item 相關 classes 做如下設定（省略掉一些無關的 styling）：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">flexbox-item</span> {
@@ -238,15 +238,15 @@
 <li>三個 items <strong>靠左</strong>排列</li>
 <li>三個不同高度的 items 變成<strong>相同的高度</strong></li>
 </ol>
-<p>這邊便會帶到另外一個後來的我希望當初學習 flexbox 時更加關注的事情：<strong>flexbox properties 的預設值</strong></p>
-<p>會出現上述三個現象是因為當我們把 flexbox container 的 <code>display</code> 設定為 <code>flex</code> 時，該 flexbox container 會自動擁有一些 flexbox properties，且它們將被設定為各自的<strong>預設值</strong></p>
+<p>這邊便會帶到另外一個後來的我希望當初學習 flexbox 時更加關注的事情：<strong>flexbox properties 的預設值</strong>。</p>
+<p>會出現上述三個現象是因為當我們把 flexbox container 的 <code>display</code> 設定為 <code>flex</code> 時，該 flexbox container 會自動擁有一些 flexbox properties，且它們將被設定為各自的<strong>預設值</strong>：</p>
 <ol>
 <li><code>flex-direction</code> 被設定為預設值 <code>row</code>，使得三個 items 呈<strong>水平方向</strong>排列</li>
 <li><code>justify-content</code> 被設定為預設值 <code>flex-start</code>，使得三個 items <strong>向左</strong>靠攏</li>
 <li><code>align-items</code> 被設定為預設值 <code>stretch</code>，使得 item1 和 item2 被拉伸為<strong>和 item3 相同的高度</strong></li>
 </ol>
-<p>我也將在本篇的結尾附上一些我覺得比較重要的 properties 的預設值</p>
-<p>接著再來複習一下，flexbox properties 分成用於設定 parent 的 flexbox container properties 和用於設定 children 的 flexbox item properties，接下來將會先介紹 flexbox container properties 再介紹 flexbox item properties</p>
+<p>我也將在本篇的結尾附上一些我覺得比較重要的 properties 的預設值。</p>
+<p>接著再來複習一下，flexbox properties 分成用於設定 parent 的 flexbox container properties 和用於設定 children 的 flexbox item properties，接下來將會先介紹 flexbox container properties 再介紹 flexbox item properties。</p>
 <h1 id="flexbox-container-properties">flexbox container properties<a hidden class="anchor" aria-hidden="true" href="#flexbox-container-properties">#</a></h1>
 <h2 id="justify-content-property"><code>justify-content</code> property<a hidden class="anchor" aria-hidden="true" href="#justify-content-property">#</a></h2>
 <p>CSS styling 當中最常做的事情莫過於將一個 element <strong>水平置中</strong>，此時我們可以透過對 flexbox container 設定 <code>justify-content: center</code> 來達到水平置中</p>
@@ -256,7 +256,7 @@
 }
 </code></pre></div><p><img loading="lazy" src="/flexbox/justify-center.png" alt="justify-center"  />
 </p>
-<p>將 justify-content 設定為 <code>center</code> 後，所有 children items 將會被擠到中間，且彼此之間不會預留空間（此處的空隙是因為 <code>flexbox-item</code> class 有設定 margin）</p>
+<p>將 justify-content 設定為 <code>center</code> 後，所有 children items 將會被擠到中間，且彼此之間不會預留空間（此處的空隙是因為 <code>flexbox-item</code> class 有設定 margin）。</p>
 <p>如果你希望在 items 之間盡可能地塞滿空間，可以將 justify-content 設定為 <code>space-between</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">flexbox-container</span> {
   <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
@@ -272,7 +272,8 @@
 </code></pre></div><p><img loading="lazy" src="/flexbox/justify-around.png" alt="justify-around"  />
 </p>
 <h2 id="align-items-property"><code>align-items</code> property<a hidden class="anchor" aria-hidden="true" href="#align-items-property">#</a></h2>
-<p>如剛才所提到的，一但將 flexbox container 設定為 <code>display:flex</code>，三個 items 的高度都將會變成一樣，是因為 <code>align-items</code> 的預設值為 <code>stretch</code>，而如果將 <code>align-items</code> 設定為 <code>flex-start</code>，則三個 items 的高度將會回到原本的值，並且朝上靠攏</p>
+<p>如剛才所提到的，一但將 flexbox container 設定為 <code>display:flex</code>，三個 items 的高度都將會變成一樣，是因為 <code>align-items</code> 的預設值為 <code>stretch</code>。</p>
+<p>而如果將 <code>align-items</code> 設定為 <code>flex-start</code>，則三個 items 的高度將會回到原本的值，並且朝上靠攏</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">flexbox-container</span> {
   <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
   <span style="color:#66d9ef">justify-content</span>: <span style="color:#66d9ef">space-around</span>;
@@ -280,7 +281,7 @@
 }
 </code></pre></div><p><img loading="lazy" src="/flexbox/align-start.png" alt="align-start"  />
 </p>
-<p>而另外一個在 css styling 中最常做的事情便是<strong>垂直置中</strong>，而這個可以透過將 align-items 設定為 <code>center</code> 來達到，在 flexbox 推出之前，要將 element 做垂直置中幾乎是不可能的事</p>
+<p>而另外一個在 css styling 中最常做的事情便是<strong>垂直置中</strong>，而這個可以透過將 align-items 設定為 <code>center</code> 來達到</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">flexbox-container</span> {
   <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
   <span style="color:#66d9ef">justify-content</span>: <span style="color:#66d9ef">space-around</span>;
@@ -288,8 +289,9 @@
 }
 </code></pre></div><p><img loading="lazy" src="/flexbox/align-center.png" alt="align-center"  />
 </p>
+<p>在 flexbox 之前，要將 element 做垂直置中幾乎是不可能的事。</p>
 <h2 id="align-content-property"><code>align-content</code> property<a hidden class="anchor" aria-hidden="true" href="#align-content-property">#</a></h2>
-<p>另一個不是很常用的 property 是 <code>align-content</code> property，align-content property 只會在<strong>多行</strong>的 flexbox items 中使用</p>
+<p>另一個不是很常用的 property 是 <code>align-content</code> property，align-content property 只會在<strong>多行</strong>的 flexbox items 中使用。</p>
 <p>如果我們將視窗的寬度縮窄，增加 flexbox container 的高度，並且將 flexbox container 的 <code>flex-wrap</code> 設定為 <code>wrap</code>，則 flexbox items 將呈 multi-line 排列</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">flexbox-container</span> {
   <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
@@ -311,7 +313,7 @@
 }
 </code></pre></div><p><img loading="lazy" src="/flexbox/align-content-start.png" alt="align-content-start"  />
 </p>
-<p><code>align-content</code> 不是一個經常使用的 property，其實大部分的時間只要使用 <code>jutify-content</code> 和 <code>align-items</code> 就可以分別在水平和垂直方向進行排列</p>
+<p><code>align-content</code> 不是一個經常使用的 property，其實大部分的時間只要使用 <code>jutify-content</code> 和 <code>align-items</code> 就可以分別在水平和垂直方向進行排列。</p>
 <h2 id="flex-direction-property"><code>flex-direction</code> property<a hidden class="anchor" aria-hidden="true" href="#flex-direction-property">#</a></h2>
 <p>如同上面提到的，<code>flex-direction</code> 的預設值為 <code>row</code>，而如果我們將之設定為 <code>column</code>，並設定 <code>jutify-content: center</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">flexbox-container</span> {
@@ -322,9 +324,9 @@
 }
 </code></pre></div><p><img loading="lazy" src="/flexbox/direction-column.png" alt="direction-column"  />
 </p>
-<p>可以看到 <code>justify-content</code> 不再以水平方向作用，而是改以垂直方向來產生 <code>center</code> 的效果</p>
+<p>可以看到 <code>justify-content</code> 不再以水平方向作用，而是改以垂直方向來產生 <code>center</code> 的效果。</p>
 <h1 id="flexbox-item-properties">flexbox item properties<a hidden class="anchor" aria-hidden="true" href="#flexbox-item-properties">#</a></h1>
-<p>flexbox item properties 用於設定某特定 flexbox item 的尺寸及排列方式等等</p>
+<p>flexbox item properties 用於設定某特定 flexbox item 的尺寸及排列方式等等。</p>
 <h2 id="flex-shrink-property"><code>flex-shrink</code> property<a hidden class="anchor" aria-hidden="true" href="#flex-shrink-property">#</a></h2>
 <p>預設情況下，如果我們將瀏覽器視窗的寬度縮小至小於 flexbox container 的寬度時，flexbox 會自動將每個 flexbox items 的寬度縮小</p>
 <p><img loading="lazy" src="/flexbox/width.png" alt="width"  />
@@ -358,7 +360,7 @@
 }
 </code></pre></div><p><img loading="lazy" src="/flexbox/flex-grow-2.png" alt="flex-grow-2"  />
 </p>
-<p>如果我們將 item2 設定為 <code>flex-row: 2</code> 並將 item1 設定為 <code>flex-grow: 1</code>，則 flexbox 會將 container 的所有剩餘空間，以 2:1 的方式增加到 item2 和 item3 上面</p>
+<p>如果我們將 item2 設定為 <code>flex-row: 2</code> 並將 item1 設定為 <code>flex-grow: 1</code>，則 flexbox 會將 container 的所有剩餘空間，以 2:1 的方式增加到 item2 和 item3 上面。</p>
 <p>此處需特別注意，<strong>item2 的寬度並不會剛好是 item3 的兩倍</strong>，因為他們兩個各自都有原本的寬度，flexbox 只是將剩餘的空間以 2:1 的比例加到他們兩個上面而已</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">flexbox-item-2</span> {
   <span style="color:#66d9ef">min-height</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
@@ -396,9 +398,9 @@
 }
 </code></pre></div><p><img loading="lazy" src="/flexbox/align-self.png" alt="align-self"  />
 </p>
-<p>以上大概就是我認為比較常用的 flexbox properties，它們不是全部，但學會這些，大概就能處理 90% 使用 flexbox 的場景了</p>
-<p>其他例如 flexbox <code>order</code> property 我甚至認為應該避免使用，它會讓 DOM 順序的管理變得混亂，除非是非使用不可的場景，否則幾乎是沒有機會用到</p>
-<p>就如同上面提到的，我覺得初學 flexbox 時若常常搞不清楚某個 property 的行為，則往往是因為忽略了 property 的<strong>預設值</strong>這件事情</p>
+<p>以上大概就是我認為比較常用的 flexbox properties，它們不是全部，但學會這些，大概就能處理 90% 使用 flexbox 的場景了。</p>
+<p>其他例如 flexbox <code>order</code> property 我甚至認為應該避免使用，它會讓 DOM 順序的管理變得混亂，除非是非使用不可的場景，否則幾乎是沒有機會用到。</p>
+<p>就如同上面提到的，我覺得初學 flexbox 時若常常搞不清楚某個 property 的行為，則往往是因為忽略了 property 的<strong>預設值</strong>這件事情。</p>
 <h1 id="shorthand---flex">Shorthand - <code>flex</code><a hidden class="anchor" aria-hidden="true" href="#shorthand---flex">#</a></h1>
 <p>另一個常見用於設定 <strong>flexbox item</strong> 的方式是使用 shorthand - <code>flex</code> property</p>
 <p><code>flex</code> 為 <code>flex-grow</code>、<code>flex-shrink</code>、<code>flex-basis</code> 的縮寫</p>
@@ -412,7 +414,7 @@
   <span style="color:#66d9ef">flex-shrink</span>: <span style="color:#ae81ff">1</span>;
   flex-basic: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
 }
-</code></pre></div><p>然而和 <code>margin</code>、<code>padding</code> 等 properties 一樣，<code>flex</code> 可能不會有完整的三個數值</p>
+</code></pre></div><p>然而和 <code>margin</code>、<code>padding</code> 等 properties 一樣，<code>flex</code> 可能不會有完整的三個數值。</p>
 <p>當 <code>flex</code> 只有<strong>兩個</strong>數值時，兩個數值可能分別代表：</p>
 <ol>
 <li><code>flex-grow</code> ＆ <code>flex-basis</code></li>
@@ -425,7 +427,7 @@
 <li><code>none</code></li>
 <li><code>inherit</code></li>
 </ol>
-<p><code>flex</code> 的定義如果沒有記清楚，很容易會有預期外的效果，這邊提供幾個常見的用法</p>
+<p><code>flex</code> 的定義如果沒有記清楚，很容易會有預期外的效果，這邊提供幾個常見的用法。</p>
 <h3 id="flex-0-auto"><code>flex: 0 auto;</code><a hidden class="anchor" aria-hidden="true" href="#flex-0-auto">#</a></h3>
 <p>這等同於 <code>flex: initial</code>，也等同於所有三個數值的預設值：<code>flex: 0 1 auto;</code></p>
 <p>這種寫法雖然沒有特別設定 <code>flex-shrink</code>，但其實已經預設把 <code>flex-shink</code> 設定為 <code>1</code>，因此該 flexbox item 會有它最初始預設的行為，也就是當 flexbox container 留有多餘的空間時，便可以根據 flexbox container 的設定來彈性地調整 flexbox items 的排列方式，同時在 flexbox container  被壓縮時，flexbox items 也跟著被壓縮。</p>
@@ -436,19 +438,19 @@
 <h3 id="flex-1"><code>flex: 1</code><a hidden class="anchor" aria-hidden="true" href="#flex-1">#</a></h3>
 <p>這等同於 <code>flex: 1 0px</code>，也等同於 <code>flex: 1 1 0px</code>，所以需要特別注意，<strong>雖然沒有特別寫，但其實已經把 <code>flex-shrink</code> 設定為 <code>1</code>，也已經把 <code>flex-basix</code> 設定為 <code>0px</code> 了</strong>，也就是 flexbox 會在假設該 item 寬度為 0 的情況下，將剩餘的空間依照該正整數的比例分配給該 flexbox item。</p>
 <h3 id="flex-100px"><code>flex: 100px</code><a hidden class="anchor" aria-hidden="true" href="#flex-100px">#</a></h3>
-<p>這等同於 <code>flex: 1 100px</code>，也等同於 <code>flex: 1 1 100px</code>，也就是，<strong>雖然沒有特別寫，但其實已經把 <code>flex-shrink</code> 設定為 <code>1</code>，也已經把 <code>flex-grow</code> 設定為 <code>1</code> 了</strong></p>
+<p>這等同於 <code>flex: 1 100px</code>，也等同於 <code>flex: 1 1 100px</code>，也就是，<strong>雖然沒有特別寫，但其實已經把 <code>flex-shrink</code> 設定為 <code>1</code>，也已經把 <code>flex-grow</code> 設定為 <code>1</code> 了</strong>。</p>
 <h3 id="flex-0-0"><code>flex: 0 0</code><a hidden class="anchor" aria-hidden="true" href="#flex-0-0">#</a></h3>
 <p>等同於 <code>flex: 0 0 0px</code>，就是雖然看起來只有設定 <code>flex-grow</code> 和 <code>flex-shrink</code>，<strong>但其實也把 <code>flex-basic</code> 設定成 <code>0</code> 了</strong></p>
 <p>由以上例子可以歸納出：</p>
 <ul>
 <li>
-<p>除了 <code>none</code> 之外，只要沒有特別設定，<code>flex-shrink</code> 都會被預設為 <code>1</code>，也就是預設該 flexbox item 無論如何都會在空間不足時被壓縮</p>
+<p>除了 <code>none</code> 之外，只要沒有特別設定，<code>flex-shrink</code> 都會被預設為 <code>1</code>，也就是預設該 flexbox item 無論如何都會在空間不足時被壓縮。</p>
 </li>
 <li>
-<p>當數值只有一個值，且該數值如果是 <strong>pixel 值</strong>，則代表 <code>flex-grow</code> 被預設為 <code>1</code>，也就是<strong>當 <code>flex</code> 被設定為像素質的時候，代表你希望設定該 flexbox item 會擴張，且會以 <code>flex-basic</code> 為該像素質的基礎進行擴張</strong></p>
+<p>當數值只有一個值，且該數值如果是 <strong>pixel 值</strong>，則代表 <code>flex-grow</code> 被預設為 <code>1</code>，也就是<strong>當 <code>flex</code> 被設定為像素質的時候，代表你希望設定該 flexbox item 會擴張，且會以 <code>flex-basic</code> 為該像素質的基礎進行擴張</strong>。</p>
 </li>
 <li>
-<p>當數值只有一個值，且該數值是<strong>正整數</strong>，則代表 <code>flex-basic</code> 被預設為 <code>0px</code>，也就是<strong>當 <code>flex</code> 被設定為正整數的時候，代表你希望設定該 flexbox item 在 <code>flex-basic</code> 為 <code>0px</code> 的基礎上，進行擴張，且以該正整數的比例進行擴張</strong></p>
+<p>當數值只有一個值，且該數值是<strong>正整數</strong>，則代表 <code>flex-basic</code> 被預設為 <code>0px</code>，也就是<strong>當 <code>flex</code> 被設定為正整數的時候，代表你希望設定該 flexbox item 在 <code>flex-basic</code> 為 <code>0px</code> 的基礎上，進行擴張，且以該正整數的比例進行擴張</strong>。</p>
 </li>
 </ul>
 <h1 id="flexbox-properties-values">Flexbox properties values<a hidden class="anchor" aria-hidden="true" href="#flexbox-properties-values">#</a></h1>

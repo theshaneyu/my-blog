@@ -13,12 +13,12 @@
       <pubDate>Tue, 15 Feb 2022 18:33:47 +0800</pubDate>
       
       <guid>http://theshaneyu.github.io/posts/flexbox/</guid>
-      <description>本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄
-基本觀念 其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 flexbox container properties 和 flexbox item properties 兩種
-所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements
-例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html
-&amp;lt;div class=&amp;#34;flexbox-container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;flexbox-item flexbox-item1&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;flexbox-item flexbox-item2&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;flexbox-item flexbox-item3&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; 而 flexbox 的 properties 也就是分成專門給 flexbox container（設定在 flexbox-container class）與專門給 flexbox items （設定在 flexbox-item1、flexbox-item2 與 flexbox-item3 classes）兩種 properties
-其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items 在一個方向上（水平或垂直） 排列的方式</description>
+      <description>本篇打算來記錄一下我學習 flexbox 的過程，算是以一個已經學會並且回頭看的角度，把一些後來的自己希望當初在學的時候能夠更加釐清的部分做一個紀錄。
+基本觀念 其中一個一開始沒弄明白但卻很重要的觀念就是：flexbox 相關的 properties 總共分成 flexbox container properties 和 flexbox item properties 兩種。
+所謂 flexbox container 也就是包覆著 flexbox items 的 parent elements。
+例如你想要針對一個 parent 下面三個 children 的排列方式進行設定，你可能會這樣安排你的 html。
+&amp;lt;div class=&amp;#34;flexbox-container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;flexbox-item flexbox-item1&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;flexbox-item flexbox-item2&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;flexbox-item flexbox-item3&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; 而 flexbox 的 properties 也就是分成專門給 flexbox container（設定在 flexbox-container class）與專門給 flexbox items （設定在 flexbox-item1、flexbox-item2 與 flexbox-item3 classes）兩種 properties。
+其實 flexbox 的目的，也就是讓你能在不一個一個設定 flexbox item 的情況下彈性地調整 flexbox container 內 flexbox items 在一個方向上（水平或垂直） 排列的方式。</description>
     </item>
     
   </channel>
