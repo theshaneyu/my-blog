@@ -315,7 +315,7 @@ align-self property 用於設定單一 flexbox item 於垂直方向對齊的方�
 
 就如同上面提到的，我覺得初學 flexbox 時若常常搞不清楚某個 property 的行為，則往往是因為忽略了 property 的**預設值**這件事情
 
-# Shorthand
+# Shorthand - `flex`
 
 另一個常見用於設定 **flexbox item** 的方式是使用 shorthand - `flex` property
 
@@ -359,7 +359,35 @@ align-self property 用於設定單一 flexbox item 於垂直方向對齊的方�
 
 這等同於 `flex: initial`，也等同於所有三個數值的預設值：`flex: 0 1 auto;`
 
-這種寫法雖然沒有特別設定 `flex-shrink`，但其實已經預設把 `flex-shink` 設定為 `1`，因此該 flexbox item 會有它最初始預設的行為，也就是當 flexbox container 留有多餘的空間時，便可以根據 flexbox container 的設定來彈性地調整 flexbox items 的排列方式，同時在 flexbox container  被壓縮時，
+這種寫法雖然沒有特別設定 `flex-shrink`，但其實已經預設把 `flex-shink` 設定為 `1`，因此該 flexbox item 會有它最初始預設的行為，也就是當 flexbox container 留有多餘的空間時，便可以根據 flexbox container 的設定來彈性地調整 flexbox items 的排列方式，同時在 flexbox container  被壓縮時，flexbox items 也跟著被壓縮。
+
+### `flex: auto`
+
+這等同於 `flex; 1 1 auto`，也就是 flexbox item 不但會空間不足時被壓縮，也會在有多餘空間時擴張。
+
+### `flex: none`
+
+這等同於 `flex: 0 0 auto`，也就是 flexbox items 不會被壓縮，也不會擴張，也就是完全不伸縮的意思。
+
+### `flex: 1`
+
+這等同於 `flex: 1 0px`，也等同於 `flex: 1 1 0px`，所以需要特別注意，**雖然沒有特別寫，但其實已經把 `flex-shrink` 設定為 `1`，也已經把 `flex-basix` 設定為 `0px` 了**，也就是 flexbox 會在假設該 item 寬度為 0 的情況下，將剩餘的空間依照該正整數的比例分配給該 flexbox item。
+
+### `flex: 100px`
+
+這等同於 `flex: 1 100px`，也等同於 `flex: 1 1 100px`，也就是，**雖然沒有特別寫，但其實已經把 `flex-shrink` 設定為 `1`，也已經把 `flex-grow` 設定為 `1` 了**
+
+### `flex: 0 0`
+
+等同於 `flex: 0 0 0px`，就是雖然看起來只有設定 `flex-grow` 和 `flex-shrink`，**但其實也把 `flex-basic` 設定成 `0` 了**
+
+由以上例子可以歸納出：
+
+- 除了 `none` 之外，只要沒有特別設定，`flex-shrink` 都會被預設為 `1`，也就是預設該 flexbox item 無論如何都會在空間不足時被壓縮
+
+- 當數值只有一個值，且該數值如果是 **pixel 值**，則代表 `flex-grow` 被預設為 `1`，也就是**當 `flex` 被設定為像素質的時候，代表你希望設定該 flexbox item 會擴張，且會以 `flex-basic` 為該像素質的基礎進行擴張**
+
+- 當數值只有一個值，且該數值是**正整數**，則代表 `flex-basic` 被預設為 `0px`，也就是**當 `flex` 被設定為正整數的時候，代表你希望設定該 flexbox item 在 `flex-basic` 為 `0px` 的基礎上，進行擴張，且以該正整數的比例進行擴張**
 
 # Flexbox properties values
 
