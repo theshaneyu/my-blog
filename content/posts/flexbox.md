@@ -260,7 +260,7 @@ flexbox item properties 用於設定某特定 flexbox item 的尺寸及排列方
 
 ![flex-grow-2](/flexbox/flex-grow-2.png)
 
-如果我們將 item2 設定為 `flex-row: 2` 並將 item1 設定為 `flex-grow: 1`，則 flexbox 會將 container 的所有剩餘空間，以 2:1 的方式增加到 item2 和 item3 上面。
+如果我們將 item2 設定為 `flex-grow: 2` 並將 item1 設定為 `flex-grow: 1`，則 flexbox 會將 container 的所有剩餘空間，以 2:1 的方式增加到 item2 和 item3 上面。
 
 此處需特別注意，**item2 的寬度並不會剛好是 item3 的兩倍**，因為他們兩個各自都有原本的寬度，flexbox 只是將剩餘的空間以 2:1 的比例加到他們兩個上面而已
 
