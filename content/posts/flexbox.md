@@ -233,7 +233,7 @@ flexbox item properties 用於設定某特定 flexbox item 的尺寸及排列方
 
 ## `flex-grow` property
 
-如果我們希望在 flexbox container 的寬度增加時，讓 item3 的寬度也隨之增加，並填滿所有剩餘的空間，可以設定 `flex-grow: 1`
+**如果我們希望讓 item3 填滿所有剩餘的空間**，並且在 flexbox container 的寬度增加時，item3 的寬度也隨之增加，則可以針對 item3 設定 `flex-grow: 1`
 
 ```css
 .flexbox-item-3 {
